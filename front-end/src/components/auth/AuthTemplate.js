@@ -17,14 +17,10 @@ const AuthTemplate = ({children}) => {
 
 /*
 *  styled-components 코드
+* TODO 로그인 화면에서 특정 크기 이상의 모니터의 경우 아랫 부분이 잘려나감 추후에 수정 반드시 필요!
  */
 const StyledAuthTemplate = styled.div`
   background: #e9ecef;
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -38,6 +34,7 @@ const FormBox = styled.div`
     align-items: center;
     text-align: center;
     padding-bottom: 1rem;
+    font-family: Fredoka;
     font-weight: bold;
     font-size: 1.5rem;
     letter-spacing: 2px;

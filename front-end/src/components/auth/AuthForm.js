@@ -6,13 +6,13 @@ import Button from '../common/Button';
 /*
 * AuthForm은 로그인 화면을 구현한 컴포넌트입니다.
  */
-const textMap = {
+const authTextMap = {
     login: '로그인',
     register: '회원가입',
 };
 
 const AuthForm = ({type, form, onChange, onSubmit}) => {
-    const text = textMap[type];
+    const text = authTextMap[type];
 
     return (
         <StyledAuthForm>
@@ -41,9 +41,8 @@ const AuthForm = ({type, form, onChange, onSubmit}) => {
  */
 const StyledAuthForm = styled.div`
   h3 {
-    margin: 0;
     color: #343a40;
-    margin-bottom: 1rem;
+    margin: 0 0 1rem;
     display: flex;
     justify-content: center;
     align-items: center;
