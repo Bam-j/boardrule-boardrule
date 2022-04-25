@@ -13,7 +13,6 @@ const Header = ({type}) => {
                 <Title>Boardrule Boardrule</Title>
             </ToMain>
             <StyledNav>
-                {/*TODO: 메인과 커뮤니티 글자수 차이 때문에 메뉴가 이동하는 문제 해결해야함! */}
                 {type === 'home' ? (
                     <Link to={'/community'}>
                         <StyledMenuItems>커뮤니티</StyledMenuItems>
