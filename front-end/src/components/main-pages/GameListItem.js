@@ -37,6 +37,7 @@ const StyledGameListItemLink = styled(Link)`
 
 const StyledGameListItem = styled.div`
   display: inline-block;
+  font-family: Fredoka;
   width: 90%;
   cursor: pointer;
   margin-left: 1rem;

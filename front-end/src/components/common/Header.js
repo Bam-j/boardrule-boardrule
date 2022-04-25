@@ -70,6 +70,7 @@ const Title = styled.h3`
   display: flex;
   font-size: 1rem;
   position: relative;
+  font-family: Fredoka;
   font-weight: bold;
   top: 0;
   left: 0;

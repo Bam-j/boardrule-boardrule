@@ -21,7 +21,7 @@ const StyledSearchBox = styled.input`
   left: 50%;
   bottom: 0;
   transform: translate(-50%, -50%);
-  font-family: 'Dongle';
+  font-family: 'PT Sans';
   font-size: 1rem;
   border: none;
   border-bottom: 1px solid #343a40;
@@ -35,7 +35,7 @@ const StyledSearchBox = styled.input`
   user-select: text;
 
   &::placeholder {
-    font-family: 'Dongle';
+    font-family: 'PT Sans';
     font-size: 1rem;
   }
 

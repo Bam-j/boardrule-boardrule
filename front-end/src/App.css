@@ -8,6 +8,11 @@
   src: url('./fonts/Dongle.woff');
 }
 
+@font-face{
+  font-family: PT Sans;
+  src: url('./fonts/PTSans-Regular.woff');
+}
+
 .App{
   text-align: center;
 }
