@@ -18,10 +18,19 @@ const AuthForm = ({type, form, onChange, onSubmit}) => {
         <StyledAuthForm>
             <h3>{text}</h3>
             <form onSubmit={onSubmit}>
-                <StyledInput autoComplete={'username'} name={'username'} placeholder='아이디'/>
-                <StyledInput type={'password'} autoComplete={'new-password'} name={'password'} placeholder='비밀번호'/>
+                <StyledInput
+                    autoComplete={'username'} name={'username'} placeholder='아이디'
+                    onChange={onChange} value={form.username}
+                />
+                <StyledInput
+                    type={'password'} autoComplete={'new-password'} name={'password'} placeholder='비밀번호'
+                    onChange={onChange} value={form.password}
+                />
                 {type === 'register' && (
-                    <StyledInput type={'password'} autoComplete={'new-password'} name={'password-confirm'} placeholder='비밀번호 확인'/>
+                    <StyledInput
+                        type={'password'} autoComplete={'new-password'} name={'password-confirm'} placeholder='비밀번호 확인'
+                        onChange={onChange} value={form.passwordConfirm}
+                    />
                 )}
                 <StyledButton fullWidth>{text}</StyledButton>
             </form>
