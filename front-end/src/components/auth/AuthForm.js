@@ -28,7 +28,7 @@ const AuthForm = ({type, form, onChange, onSubmit}) => {
                 />
                 {type === 'register' && (
                     <StyledInput
-                        type={'password'} autoComplete={'new-password'} name={'password-confirm'} placeholder='비밀번호 확인'
+                        type={'password'} autoComplete={'new-password'} name={'passwordConfirm'} placeholder='비밀번호 확인'
                         onChange={onChange} value={form.passwordConfirm}
                     />
                 )}

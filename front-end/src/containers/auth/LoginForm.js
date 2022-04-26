@@ -1,5 +1,5 @@
 /*
-* LoginPage에서 상태변화가 일어났을 때 상태를 관리하는 LoginForm 컴포넌트
+* LoginPage에서 상태변화가 일어났을 때 상태를 관리하는 LoginForm
  */
 import React, {useEffect} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
