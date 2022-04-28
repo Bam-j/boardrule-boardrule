@@ -11,27 +11,22 @@ const authTextMap = {
     register: '회원가입',
 };
 
-const AuthForm = ({type, form, onChange, onSubmit}) => {
+const AuthForm = ({type, form, onChange, onSubmit, error}) => {
     const text = authTextMap[type];
 
     return (
         <StyledAuthForm>
             <h3>{text}</h3>
             <form onSubmit={onSubmit}>
-                <StyledInput
-                    autoComplete={'username'} name={'username'} placeholder='아이디'
-                    onChange={onChange} value={form.username}
-                />
-                <StyledInput
-                    type={'password'} autoComplete={'new-password'} name={'password'} placeholder='비밀번호'
-                    onChange={onChange} value={form.password}
-                />
+                <StyledInput autoComplete={'username'} name={'username'} placeholder='아이디' onChange={onChange}
+                             value={form.username}/>
+                <StyledInput type={'password'} autoComplete={'new-password'} name={'password'} placeholder='비밀번호'
+                             onChange={onChange} value={form.password}/>
                 {type === 'register' && (
-                    <StyledInput
-                        type={'password'} autoComplete={'new-password'} name={'passwordConfirm'} placeholder='비밀번호 확인'
-                        onChange={onChange} value={form.passwordConfirm}
-                    />
+                    <StyledInput type={'password'} autoComplete={'new-password'} name={'passwordConfirm'}
+                                 placeholder='비밀번호 확인' onChange={onChange} value={form.passwordConfirm}/>
                 )}
+                {error && <ErrorMessage>{error}</ErrorMessage>}
                 <StyledButton fullWidth>{text}</StyledButton>
             </form>
             <StyledFooter>
@@ -91,6 +86,13 @@ const StyledFooter = styled.footer`
       color: #212529;
     }
   }
+`;
+
+const ErrorMessage = styled.div`
+  color: #ff0000;
+  text-align: center;
+  font-size: 0.875rem;
+  margin-top: 1rem;
 `;
 
 export default AuthForm;

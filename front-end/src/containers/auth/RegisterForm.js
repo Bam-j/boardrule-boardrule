@@ -1,7 +1,7 @@
 /*
 * RegisterPage에서 상태변화가 일어났을 때 상태를 관리하는 RegisterForm
  */
-import React, {useEffect} from 'react';
+import React, {useEffect, useState} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 import {withRouter} from 'react-router-dom';
 import {changeField, initializeForm, register} from '../../modules/auth';
@@ -16,6 +16,7 @@ const RegisterForm = ({history}) => {
         authError: auth.authError,
         user: user.user,
     }));
+    const [error, setError] = useState(null);
 
     /*
     * 폼에 데이터를 input하는 경우의 이벤트 핸들러
@@ -37,8 +38,17 @@ const RegisterForm = ({history}) => {
 
         const {username, password, passwordConfirm} = form;
 
+        if ([username, password, passwordConfirm].includes('')) {
+            setError('입력하지 않은 칸이 있습니다.');
+
+            return;
+        }
         if (password !== passwordConfirm) {
-            //TODO 추후 오류 처리 코드 작성 필요!
+            setError('비밀번호가 일치하지 않습니다.');
+
+            dispatch(changeField({form: 'register', key: 'password', value: ''}));
+            dispatch(changeField({form: 'register', key: 'passwordConfirm', value: ''}));
+
             return;
         }
         dispatch(register({username, password}));
@@ -50,8 +60,12 @@ const RegisterForm = ({history}) => {
 
     useEffect(() => {
         if (authError) {
-            console.log('오류 발생(회원가입)');
-            console.log(authError);
+            if (authError.response.status === 409) {
+                setError('이미 존재하는 계정이름입니다.');
+
+                return;
+            }
+            setError('회원가입 실패');
 
             return;
         }

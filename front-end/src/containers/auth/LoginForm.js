@@ -1,7 +1,7 @@
 /*
 * LoginPage에서 상태변화가 일어났을 때 상태를 관리하는 LoginForm
  */
-import React, {useEffect} from 'react';
+import React, {useEffect, useState} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 import {withRouter} from 'react-router-dom';
 import {changeField, initializeForm, login} from '../../modules/auth';
@@ -16,6 +16,7 @@ const LoginForm = ({history}) => {
         authError: auth.authError,
         user: user.user,
     }));
+    const [error, setError] = useState(null);
 
     /*
     * 폼에 데이터를 input하는 경우의 이벤트 핸들러
@@ -48,6 +49,7 @@ const LoginForm = ({history}) => {
         if (authError) {
             console.log('오류 발생(로그인)');
             console.log(authError);
+            setError('로그인 실패');
 
             return;
         }
@@ -65,7 +67,7 @@ const LoginForm = ({history}) => {
         }
     }, [history, user]);
 
-    return <AuthForm type={'login'} form={form} onChange={onChange} onSubmit={onSubmit}/>;
+    return <AuthForm type={'login'} form={form} onChange={onChange} onSubmit={onSubmit} error={error}/>;
 };
 
 export default withRouter(LoginForm);
