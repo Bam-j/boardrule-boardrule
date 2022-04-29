@@ -7,10 +7,20 @@ import mongoose from 'mongoose';
 
 import api from './api';
 
-const {PORT} = process.env;
+const {PORT, MONGO_URI} = process.env;
+
+mongoose.connect(MONGO_URI)
+    .then(() => console.log('Connected to MongoDB'))
+    .catch(e => console.error(e));
 
 const app = new Koa();
 const router = new Router();
+
+router.use('./api', api.routes());
+
+app.use(bodyParser());
+app.use(jwtMiddleware);
+app.use(router.routes()).use(router.allowedMethods());
 
 const port = PORT || 4000;
 

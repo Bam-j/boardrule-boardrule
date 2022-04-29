@@ -8,15 +8,11 @@ const UserSchema = new Schema({
 });
 
 UserSchema.methods.setPassword = async function (password) {
-    const hash = await bcrypt.hash(password, 10);
-
-    this.hashedPassword = hash;
+    this.hashedPassword = await bcrypt.hash(password, 10);
 };
 
 UserSchema.methods.checkPassword = async function (password) {
-    const result = await bcrypt.compare(password, this.hashedPassword);
-
-    return result;
+    return await bcrypt.compare(password, this.hashedPassword);
 };
 
 UserSchema.statics.findByUsername = function (username) {
@@ -32,7 +28,7 @@ UserSchema.methods.serialize = function () {
 };
 
 UserSchema.methods.generateToken = function () {
-    const token = jwt.sign(
+    return jwt.sign(
         {
             _id: this.id,
             username: this.username,
@@ -42,10 +38,8 @@ UserSchema.methods.generateToken = function () {
             expiresIn: '7d',
         },
     );
-
-    return token;
 };
 
-const User = mongoose.model('user', UserSchema);
+const User = mongoose.model('User', UserSchema);
 
 export default User

@@ -84,3 +84,20 @@ export const login = async ctx => {
         ctx.throw(500, e);
     }
 };
+
+export const check = async ctx => {
+    const {user} = ctx.state;
+
+    if (!user) {
+        ctx.status = 404;
+
+        return;
+    }
+
+    ctx.body = user;
+};
+
+export const logout = async ctx => {
+    ctx.cookies.set('access_token');
+    ctx.status = 204;
+};
