@@ -3,13 +3,14 @@
  */
 import React, {useEffect, useState} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
-import {withRouter} from 'react-router-dom';
+import {useNavigate} from 'react-router-dom';
 import {changeField, initializeForm, login} from '../../modules/auth';
 import AuthForm from '../../components/auth/AuthForm';
 import {check} from '../../modules/user'
 
 const LoginForm = ({history}) => {
     const dispatch = useDispatch();
+    const navigate = useNavigate();
     const {form, auth, authError, user} = useSelector(({auth, user}) => ({
         form: auth.login,
         auth: auth.auth,
@@ -63,11 +64,11 @@ const LoginForm = ({history}) => {
 
     useEffect(() => {
         if (user) {
-            history.push('/');
+            navigate('/');
         }
     }, [history, user]);
 
     return <AuthForm type={'login'} form={form} onChange={onChange} onSubmit={onSubmit} error={error}/>;
 };
 
-export default withRouter(LoginForm);
+export default LoginForm;
