@@ -1,7 +1,7 @@
 {
   "name": "back-end",
   "version": "0.0.1",
-  "description": "boardrule-boardrule porject back-end dir",
+  "description": "boardrule-boardrule project back-end dir",
   "main": "index.js",
   "scripts": {
     "start": "node -r esm src",
