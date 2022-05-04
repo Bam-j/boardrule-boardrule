@@ -15,9 +15,18 @@ export const checkObjectId = (ctx, next) => {
 };
 
 export const list = async ctx => {
-    try {
-        const posts = await Post.find().exec();
+    const page = parseInt(ctx.query.page || '1', 10);
 
+    if (page < 1) {
+        ctx.status = 400;
+        return;
+    }
+
+    try {
+        const posts = await Post.find().sort({_id: -1}).limit(15).skip((page - 1) * 10).exec();
+        const postCount = await Post.countDocuments().exec();
+
+        ctx.set('Last-Page', Math.ceil(postCount / 10));
         ctx.body = posts;
     }
     catch (e) {

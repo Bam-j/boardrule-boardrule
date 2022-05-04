@@ -64,6 +64,7 @@ const LoginForm = ({history}) => {
 
     useEffect(() => {
         if (user) {
+            //TODO home으로 이동되지 않음! register도 마찬가지 수정필요!
             navigate('/');
         }
     }, [history, user]);
