@@ -23,9 +23,8 @@ const StyledSearchBox = styled.input`
   transform: translate(-50%, -50%);
   font-family: 'PT Sans';
   font-size: 1rem;
-  border: none;
-  border-bottom: 1px solid #343a40;
-  /*background-color: #eadf6a;*/
+  border-width: 1px;
+  border-style: none none solid none;
   outline: none;
   align-content: center;
   -ms-user-select: text;

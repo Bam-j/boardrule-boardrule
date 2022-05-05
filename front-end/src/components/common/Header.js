@@ -78,6 +78,7 @@ const Title = styled.h3`
 `;
 
 const ToMain = styled(Link)`
+  margin-left: 0.5rem;
   &:link, &:visited, &:hover, &:active {
     cursor: pointer;
     color: #000;
