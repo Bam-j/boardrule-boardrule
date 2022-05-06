@@ -50,7 +50,7 @@ const StyledHeader = styled.header`
   user-select: none;
 
   @media (max-width: 1024px) {
-    width: 97%;
+    width: 100%;
     display: flex;
     position: relative;
     flex-wrap: wrap;

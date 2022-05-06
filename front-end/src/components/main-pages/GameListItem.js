@@ -2,7 +2,6 @@ import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
-
 /*
 *  GameListItem 컴포넌트는 게임 리스트 내의 개별 게임들에 대한 것을 렌더링하는 컴포넌트입니다.
  */
