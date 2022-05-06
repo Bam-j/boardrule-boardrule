@@ -1,10 +1,10 @@
 import React from 'react';
-import styled, {css} from 'styled-components';
+import styled, { css } from 'styled-components';
 
 /*
 * 로그인과 회원가입에서 재사용될 버튼 컴포넌트
  */
-const Button = props => <StyledButton {...props}/>
+const Button = props => <StyledButton {...props} />;
 
 /*
 * styled-components 코드

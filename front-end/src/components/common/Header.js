@@ -1,34 +1,34 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 /*
 *  Header 컴포넌트는 메인 페이지의 헤더(로고, 검색, 서브메뉴)를 렌더링 하는 컴포넌트 입니다.
 *  이 컴포넌트는 메인 페이지와 커뮤니티 페이지에서 재사용됩니다.
  */
-const Header = ({type}) => {
-    return (
-        <StyledHeader>
-            <ToMain to={'/'}>
-                <Title>Boardrule Boardrule</Title>
-            </ToMain>
-            <StyledNav>
-                {type === 'home' ? (
-                    <Link to={'/community'}>
-                        <StyledMenuItems>커뮤니티</StyledMenuItems>
-                    </Link>
-                ) : (
-                    <Link to={'/'}>
-                        <StyledMenuItems> 메 인 </StyledMenuItems>
-                    </Link>
-                )}
-                <StyledMenuItems className={'bar'}> | </StyledMenuItems>
-                <Link to={'/login'}>
-                    <StyledMenuItems>로그인</StyledMenuItems>
-                </Link>
-            </StyledNav>
-        </StyledHeader>
-    );
+const Header = ({ type }) => {
+  return (
+    <StyledHeader>
+      <ToMain to={'/'}>
+        <Title>Boardrule Boardrule</Title>
+      </ToMain>
+      <StyledNav>
+        {type === 'home' ? (
+          <Link to={'/community'}>
+            <StyledMenuItems>커뮤니티</StyledMenuItems>
+          </Link>
+        ) : (
+          <Link to={'/'}>
+            <StyledMenuItems> 메 인 </StyledMenuItems>
+          </Link>
+        )}
+        <StyledMenuItems className={'bar'}> | </StyledMenuItems>
+        <Link to={'/login'}>
+          <StyledMenuItems>로그인</StyledMenuItems>
+        </Link>
+      </StyledNav>
+    </StyledHeader>
+  );
 };
 
 /*
@@ -79,6 +79,7 @@ const Title = styled.h3`
 
 const ToMain = styled(Link)`
   margin-left: 0.5rem;
+
   &:link, &:visited, &:hover, &:active {
     cursor: pointer;
     color: #000;

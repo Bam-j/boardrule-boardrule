@@ -1,19 +1,19 @@
 import React from 'react';
 import styled from 'styled-components';
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
-const AuthTemplate = ({children}) => {
-    return (
-        <StyledAuthTemplate>
-            <FormBox>
-                <div className={'banner'}>
-                    <Banner to={'/'}>Boardrule Boardrule</Banner>
-                </div>
-                {children}
-            </FormBox>
-        </StyledAuthTemplate>
-    );
-}
+const AuthTemplate = ({ children }) => {
+  return (
+    <StyledAuthTemplate>
+      <FormBox>
+        <div className={'banner'}>
+          <Banner to={'/'}>Boardrule Boardrule</Banner>
+        </div>
+        {children}
+      </FormBox>
+    </StyledAuthTemplate>
+  );
+};
 
 /*
 *  styled-components 코드

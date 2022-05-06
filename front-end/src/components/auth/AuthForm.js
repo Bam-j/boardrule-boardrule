@@ -1,43 +1,43 @@
 import React from 'react';
 import styled from 'styled-components';
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import Button from '../common/Button';
 
 /*
 * AuthForm은 로그인 화면을 구현한 컴포넌트입니다.
  */
 const authTextMap = {
-    login: '로그인',
-    register: '회원가입',
+  login: '로그인',
+  register: '회원가입',
 };
 
-const AuthForm = ({type, form, onChange, onSubmit, error}) => {
-    const text = authTextMap[type];
+const AuthForm = ({ type, form, onChange, onSubmit, error }) => {
+  const text = authTextMap[type];
 
-    return (
-        <StyledAuthForm>
-            <h3>{text}</h3>
-            <form onSubmit={onSubmit}>
-                <StyledInput autoComplete={'username'} name={'username'} placeholder='아이디' onChange={onChange}
-                             value={form.username}/>
-                <StyledInput type={'password'} autoComplete={'new-password'} name={'password'} placeholder='비밀번호'
-                             onChange={onChange} value={form.password}/>
-                {type === 'register' && (
-                    <StyledInput type={'password'} autoComplete={'new-password'} name={'passwordConfirm'}
-                                 placeholder='비밀번호 확인' onChange={onChange} value={form.passwordConfirm}/>
-                )}
-                {error && <ErrorMessage>{error}</ErrorMessage>}
-                <StyledButton fullWidth>{text}</StyledButton>
-            </form>
-            <StyledFooter>
-                {type === 'login' ? (
-                    <Link to={'/register'}>회원가입</Link>
-                ) : (
-                    <Link to={'/login'}>로그인</Link>
-                )}
-            </StyledFooter>
-        </StyledAuthForm>
-    );
+  return (
+    <StyledAuthForm>
+      <h3>{text}</h3>
+      <form onSubmit={onSubmit}>
+        <StyledInput autoComplete={'username'} name={'username'} placeholder='아이디' onChange={onChange}
+                     value={form.username} />
+        <StyledInput type={'password'} autoComplete={'new-password'} name={'password'} placeholder='비밀번호'
+                     onChange={onChange} value={form.password} />
+        {type === 'register' && (
+          <StyledInput type={'password'} autoComplete={'new-password'} name={'passwordConfirm'} placeholder='비밀번호 확인'
+                       onChange={onChange} value={form.passwordConfirm} />
+        )}
+        {error && <ErrorMessage>{error}</ErrorMessage>}
+        <StyledButton fullWidth>{text}</StyledButton>
+      </form>
+      <StyledFooter>
+        {type === 'login' ? (
+          <Link to={'/register'}>회원가입</Link>
+        ) : (
+          <Link to={'/login'}>로그인</Link>
+        )}
+      </StyledFooter>
+    </StyledAuthForm>
+  );
 };
 
 /*

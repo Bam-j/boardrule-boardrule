@@ -43,8 +43,8 @@ const StyledGameListItem = styled.div`
   margin-right: 1rem;
   margin-bottom: 2rem;
   background-color: #e9ecef;
-    border-radius: 4px;
-    box-shadow: 0.125rem 0.125rem #a9acaf;
+  border-radius: 4px;
+  box-shadow: 0.125rem 0.125rem #a9acaf;
 
   border: solid 1px blue;
 

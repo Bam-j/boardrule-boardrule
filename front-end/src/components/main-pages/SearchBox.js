@@ -1,16 +1,16 @@
 import React from 'react';
 import styled from 'styled-components';
-import {FiSearch} from 'react-icons/fi';
+import { FiSearch } from 'react-icons/fi';
 
 const SearchBox = () => {
-    return (
-        <form>
-            <div>
-                <StyledSearchBox type={'search'} placeholder='검색'/>
-                <SearchIcon type='submit'><StyledFiSearch/></SearchIcon>
-            </div>
-        </form>
-    );
+  return (
+    <form>
+      <div>
+        <StyledSearchBox type={'search'} placeholder='검색' />
+        <SearchIcon type='submit'><StyledFiSearch /></SearchIcon>
+      </div>
+    </form>
+  );
 };
 
 const StyledSearchBox = styled.input`
