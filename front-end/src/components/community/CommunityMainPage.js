@@ -1,10 +1,10 @@
 import React from 'react';
-import Header from '../common/Header';
+import HeaderContainer from '../../containers/common/HeaderContainer';
 
 const CommunityMainPage = () => {
   return (
     <>
-      <Header type={'community'} />
+      <HeaderContainer/>
       <div>커뮤니티 페이지입니다. (Main)</div>
     </>
   );

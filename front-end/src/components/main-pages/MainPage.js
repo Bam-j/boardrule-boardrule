@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import Header from '../common/Header';
 import GameList from './GameList';
 import imgSrc from '../../img/testImg.png';
 import SearchBox from './SearchBox';
+import HeaderContainer from '../../containers/common/HeaderContainer';
 
 const MainPage = () => {
   const [games, setGames] = useState([
@@ -34,7 +34,8 @@ const MainPage = () => {
 
   return (
     <>
-      <Header type={'home'} />
+      <HeaderContainer/>
+      {/*<Header type={'home'} />*/}
       <SearchBox />
       <GameList games={games} />
     </>

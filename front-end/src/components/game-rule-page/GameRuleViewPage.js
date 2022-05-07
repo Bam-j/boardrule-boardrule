@@ -1,10 +1,10 @@
 import React from 'react';
-import Header from '../common/Header';
+import HeaderContainer from '../../containers/common/HeaderContainer';
 
 const GameRuleViewPage = () => {
   return (
     <>
-      <Header type={'rules'} />
+      <HeaderContainer/>
       <div>게임 룰 뷰 페이지입니다.</div>
     </>
   );

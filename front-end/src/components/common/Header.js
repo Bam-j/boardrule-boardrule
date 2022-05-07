@@ -6,7 +6,7 @@ import styled from 'styled-components';
 *  Header 컴포넌트는 메인 페이지의 헤더(로고, 검색, 서브메뉴)를 렌더링 하는 컴포넌트 입니다.
 *  이 컴포넌트는 메인 페이지와 커뮤니티 페이지에서 재사용됩니다.
  */
-const Header = ({ type }) => {
+const Header = ({ type, user }) => {
   return (
     <StyledHeader>
       <ToMain to={'/'}>
@@ -15,17 +15,29 @@ const Header = ({ type }) => {
       <StyledNav>
         {type === 'home' ? (
           <Link to={'/community'}>
-            <StyledMenuItems>커뮤니티</StyledMenuItems>
+            <StyledMenuItem>커뮤니티</StyledMenuItem>
           </Link>
         ) : (
           <Link to={'/'}>
-            <StyledMenuItems> 메 인 </StyledMenuItems>
+            <StyledMenuItem> 메 인 </StyledMenuItem>
           </Link>
         )}
-        <StyledMenuItems className={'bar'}> | </StyledMenuItems>
+        <StyledMenuItem><DivideBar> | </DivideBar></StyledMenuItem>
+        {user ? (
+          <div>
+            <UserInfo>{user.username}</UserInfo>
+            <button>로그아웃</button>
+          </div>
+        ) : (
+          <Link to={'/login'}>
+            <StyledMenuItem>로그인</StyledMenuItem>
+          </Link>
+        )}
+        {/*
         <Link to={'/login'}>
           <StyledMenuItems>로그인</StyledMenuItems>
         </Link>
+        */}
       </StyledNav>
     </StyledHeader>
   );
@@ -94,11 +106,7 @@ const StyledNav = styled.nav`
   margin-left: auto;
 `;
 
-const StyledMenuItems = styled.span`
-  .bar {
-    cursor: default;
-  }
-
+const StyledMenuItem = styled.span`
   justify-content: flex-end;
   float: right;
   font-family: 'Dongle';
@@ -112,6 +120,16 @@ const StyledMenuItems = styled.span`
     color: #000;
     text-decoration: none
   }
+`;
+
+const DivideBar = styled.span`
+  cursor: default;
+  font-weight: bold;
+`;
+
+const UserInfo = styled.div`
+  font-weight: 800;
+  margin-left: 1rem;
 `;
 
 export default Header;

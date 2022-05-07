@@ -85,7 +85,7 @@ const RegisterForm = () => {
     }
   }, [navigate, user]);
 
-  return <AuthForm type={'register'} form={form} onChange={onChange} onSubmit={onSubmit} />;
+  return <AuthForm type={'register'} form={form} onChange={onChange} onSubmit={onSubmit} error={error}/>;
 };
 
 export default RegisterForm;
