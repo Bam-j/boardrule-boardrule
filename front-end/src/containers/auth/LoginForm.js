@@ -8,7 +8,7 @@ import { changeField, initializeForm, login } from '../../modules/auth';
 import AuthForm from '../../components/auth/AuthForm';
 import { check } from '../../modules/user';
 
-const LoginForm = ({ history }) => {
+const LoginForm = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const { form, auth, authError, user } = useSelector(({ auth, user }) => ({
@@ -66,7 +66,7 @@ const LoginForm = ({ history }) => {
     if (user) {
       navigate('/');
     }
-  }, [history, user]);
+  }, [navigate, user]);
 
   return <AuthForm type={'login'} form={form} onChange={onChange} onSubmit={onSubmit} error={error} />;
 };

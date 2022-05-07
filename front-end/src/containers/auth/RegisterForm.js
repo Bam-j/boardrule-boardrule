@@ -8,7 +8,7 @@ import { changeField, initializeForm, register } from '../../modules/auth';
 import AuthForm from '../../components/auth/AuthForm';
 import { check } from '../../modules/user';
 
-const RegisterForm = ({ history }) => {
+const RegisterForm = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const { form, auth, authError, user } = useSelector(({ auth, user }) => ({
@@ -70,6 +70,7 @@ const RegisterForm = ({ history }) => {
 
       return;
     }
+
     if (auth) {
       console.log('회원가입 성공');
       console.log(auth);
@@ -80,12 +81,9 @@ const RegisterForm = ({ history }) => {
 
   useEffect(() => {
     if (user) {
-      console.log('check API 성공');
-      console.log(user);
-
       navigate('/');
     }
-  }, [history, user]);
+  }, [navigate, user]);
 
   return <AuthForm type={'register'} form={form} onChange={onChange} onSubmit={onSubmit} />;
 };

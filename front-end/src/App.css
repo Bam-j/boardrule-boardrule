@@ -1,18 +1,18 @@
 @font-face{
-  font-family: Fredoka;
-  src: url('./fonts/Fredoka.woff');
+    font-family: Fredoka;
+    src: url('./fonts/Fredoka.woff');
 }
 
 @font-face{
-  font-family: Dongle;
-  src: url('./fonts/Dongle.woff');
+    font-family: Dongle;
+    src: url('./fonts/Dongle.woff');
 }
 
 @font-face{
-  font-family: PT Sans;
-  src: url('./fonts/PTSans-Regular.woff');
+    font-family: PT Sans;
+    src: url('./fonts/PTSans-Regular.woff');
 }
 
 .App{
-  text-align: center;
+    text-align: center;
 }
