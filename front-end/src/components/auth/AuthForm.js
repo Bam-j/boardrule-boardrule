@@ -31,9 +31,15 @@ const AuthForm = ({ type, form, onChange, onSubmit, error }) => {
       </form>
       <StyledFooter>
         {type === 'login' ? (
-          <Link to={'/register'}>회원가입</Link>
+          <div>
+            <p className={'guide-text'}>회원이 아니신가요?</p>
+            <Link to={'/register'}>회원가입</Link>
+          </div>
         ) : (
-          <Link to={'/login'}>로그인</Link>
+          <div>
+            <p className={'guide-text'}>이미 회원이시라면</p>
+            <Link to={'/login'}>로그인</Link>
+          </div>
         )}
       </StyledFooter>
     </StyledAuthForm>
@@ -77,6 +83,11 @@ const StyledButton = styled(Button)`
 const StyledFooter = styled.footer`
   margin-top: 2rem;
   text-align: right;
+  color: #868e96;
+
+  .guide-text {
+    font-size: 0.00125rem;
+  }
 
   a {
     color: #868e96;

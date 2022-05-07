@@ -22,6 +22,8 @@ const AuthTemplate = ({ children }) => {
 const StyledAuthTemplate = styled.div`
   background: #e9ecef;
   display: flex;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -33,7 +35,7 @@ const FormBox = styled.div`
     justify-content: center;
     align-items: center;
     text-align: center;
-    padding-bottom: 1rem;
+    padding-bottom: 0.5rem;
     font-family: Fredoka;
     font-weight: bold;
     font-size: 1.5rem;

@@ -9,8 +9,8 @@ import AuthForm from '../../components/auth/AuthForm';
 import { check } from '../../modules/user';
 
 const LoginForm = () => {
-  const dispatch = useDispatch();
   const navigate = useNavigate();
+  const dispatch = useDispatch();
   const { form, auth, authError, user } = useSelector(({ auth, user }) => ({
     form: auth.login,
     auth: auth.auth,
