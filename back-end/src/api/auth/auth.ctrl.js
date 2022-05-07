@@ -1,7 +1,10 @@
 import Joi from 'joi';
 import User from '../../models/user';
-import bcrypt from 'bcrypt';
 
+/*
+  test계정: test1
+  패스워드: t123
+ */
 export const register = async ctx => {
   const schema = Joi.object().keys({
     username: Joi.string().alphanum().min(3).max(20).required(),
@@ -49,6 +52,7 @@ export const login = async ctx => {
   const { username, password } = ctx.request.body;
 
   if (!username || !password) {
+    console.log('유저이름/패스워드 미존재');
     ctx.status = 401;
 
     return;
@@ -58,6 +62,7 @@ export const login = async ctx => {
     const user = await User.findByUsername(username);
 
     if (!user) {
+      console.log('계정 틀림');
       ctx.status = 401;
 
       return;
@@ -66,6 +71,7 @@ export const login = async ctx => {
     const valid = await user.checkPassword(password);
 
     if (!valid) {
+      console.log('패스워드 오류');
       ctx.status = 401;
 
       return;
@@ -89,7 +95,7 @@ export const check = async ctx => {
   const { user } = ctx.state;
 
   if (!user) {
-    ctx.status = 404;
+    ctx.status = 401;
 
     return;
   }

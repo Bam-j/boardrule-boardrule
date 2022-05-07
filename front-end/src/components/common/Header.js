@@ -24,10 +24,11 @@ const Header = ({ type, user }) => {
         )}
         <StyledMenuItem><DivideBar> | </DivideBar></StyledMenuItem>
         {user ? (
-          <div>
-            <UserInfo>{user.username}</UserInfo>
-            <button>로그아웃</button>
-          </div>
+          <StyledMenuItem>
+            <UserInfo>{user.username} 님 </UserInfo>
+            {/* TODO 로그아웃 버튼 꾸미고 위치 조절해야함 */}
+            <LogoutButton>로그아웃</LogoutButton>
+          </StyledMenuItem>
         ) : (
           <Link to={'/login'}>
             <StyledMenuItem>로그인</StyledMenuItem>
@@ -128,8 +129,15 @@ const DivideBar = styled.span`
 `;
 
 const UserInfo = styled.div`
-  font-weight: 800;
   margin-left: 1rem;
+  cursor: default;
+`;
+
+const LogoutButton = styled.span`
+  color: #868e96;
+  
+  &:hover &:active {
+  }
 `;
 
 export default Header;
