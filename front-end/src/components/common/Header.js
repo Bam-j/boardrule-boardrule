@@ -135,7 +135,7 @@ const UserInfo = styled.div`
 
 const LogoutButton = styled.span`
   color: #868e96;
-  
+
   &:hover &:active {
   }
 `;
