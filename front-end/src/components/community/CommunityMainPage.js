@@ -4,7 +4,7 @@ import HeaderContainer from '../../containers/common/HeaderContainer';
 const CommunityMainPage = () => {
   return (
     <>
-      <HeaderContainer/>
+      <HeaderContainer type={'community'}/>
       <div>커뮤니티 페이지입니다. (Main)</div>
     </>
   );

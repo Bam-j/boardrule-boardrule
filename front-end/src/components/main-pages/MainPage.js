@@ -34,7 +34,7 @@ const MainPage = () => {
 
   return (
     <>
-      <HeaderContainer/>
+      <HeaderContainer type={'home'}/>
       {/*<Header type={'home'} />*/}
       <SearchBox />
       <GameList games={games} />

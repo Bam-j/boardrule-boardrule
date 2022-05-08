@@ -82,10 +82,17 @@ const RegisterForm = () => {
   useEffect(() => {
     if (user) {
       navigate('/');
+
+      try {
+        localStorage.setItem('user', JSON.stringify(user));
+      }
+      catch (e) {
+        console.log('로컬스토리지 작동 오류');
+      }
     }
   }, [navigate, user]);
 
-  return <AuthForm type={'register'} form={form} onChange={onChange} onSubmit={onSubmit} error={error}/>;
+  return <AuthForm type={'register'} form={form} onChange={onChange} onSubmit={onSubmit} error={error} />;
 };
 
 export default RegisterForm;
