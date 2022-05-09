@@ -1,18 +1,41 @@
 import createRequestSaga, { createRequestActionTypes } from '../lib/createRequestSaga';
 import { createAction, handleActions } from 'redux-actions';
-import { takeLatest } from 'redux-saga/effects';
+import { takeLatest, call } from 'redux-saga/effects';
 import * as authAPI from '../lib/api/auth';
 
 const TEMP_SET_USER = 'user/TEMP_SET_USER';
 const [CHECK, CHECK_SUCCESS, CHECK_FAILURE] = createRequestActionTypes('user/CHECK');
+const LOGOUT = 'user/logout';
 
 export const tempSetUser = createAction(TEMP_SET_USER, user => user);
 export const check = createAction(CHECK);
+export const logout = createAction(LOGOUT);
 
 const checkSaga = createRequestSaga(CHECK, authAPI.check);
 
+function checkFailureSaga() {
+  try {
+    localStorage.removeItem('user');
+  }
+  catch (e) {
+    console.log('로컬 스토리지 동작 오류');
+  }
+}
+
+function* logoutSaga() {
+  try {
+    yield call(authAPI.logout);
+    localStorage.removeItem('user');
+  }
+  catch (e) {
+    console.log(e);
+  }
+}
+
 export function* userSaga() {
   yield takeLatest(CHECK, checkSaga);
+  yield takeLatest(CHECK_FAILURE, checkFailureSaga);
+  yield takeLatest(LOGOUT, logoutSaga);
 }
 
 const initialState = {
@@ -35,6 +58,10 @@ export default handleActions(
       ...state,
       user: null,
       checkError: error,
+    }),
+    [LOGOUT]: state => ({
+      ...state,
+      user: null,
     }),
   }, initialState,
 );

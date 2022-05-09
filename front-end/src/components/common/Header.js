@@ -6,7 +6,7 @@ import styled from 'styled-components';
 *  Header 컴포넌트는 메인 페이지의 헤더(로고, 검색, 서브메뉴)를 렌더링 하는 컴포넌트 입니다.
 *  이 컴포넌트는 메인 페이지와 커뮤니티 페이지에서 재사용됩니다.
  */
-const Header = ({ type, user }) => {
+const Header = ({ type, user, onLogout }) => {
   return (
     <StyledHeader>
       <ToMain to={'/'}>
@@ -27,7 +27,7 @@ const Header = ({ type, user }) => {
           <StyledMenuItem>
             <UserInfo>{user.username} 님 </UserInfo>
             {/* TODO 로그아웃 버튼 꾸미고 위치 조절해야함 */}
-            <LogoutButton>로그아웃</LogoutButton>
+            <LogoutButton onClick={onLogout}>로그아웃</LogoutButton>
           </StyledMenuItem>
         ) : (
           <Link to={'/login'}>
