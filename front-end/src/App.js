@@ -6,6 +6,7 @@ import LoginPage from './components/auth/LoginPage';
 import RegisterPage from './components/auth/RegisterPage';
 import CommunityMainPage from './components/community/CommunityMainPage';
 import GameRuleViewPage from './components/game-rule-page/GameRuleViewPage';
+import WritePage from './components/community/WritePage';
 
 const App = () => {
   return (
@@ -16,6 +17,7 @@ const App = () => {
         <Route path={'/register'} element={<RegisterPage />} />
         <Route path={'/community'} element={<CommunityMainPage />} />
         <Route path={'/rules'} element={<GameRuleViewPage />} />
+        <Route path={'write'} element={<WritePage />} />
       </Routes>
     </>
   );

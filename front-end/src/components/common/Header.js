@@ -34,11 +34,6 @@ const Header = ({ type, user, onLogout }) => {
             <StyledMenuItem>로그인</StyledMenuItem>
           </Link>
         )}
-        {/*
-        <Link to={'/login'}>
-          <StyledMenuItems>로그인</StyledMenuItems>
-        </Link>
-        */}
       </StyledNav>
     </StyledHeader>
   );
