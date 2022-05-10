@@ -1,4 +1,4 @@
-import React, { useCallback, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import styled from 'styled-components';
 
 const TagItem = React.memo(({ tag, onRemove }) => <Tag onClick={() => onRemove(tag)}>#{tag}</Tag>);
@@ -8,26 +8,40 @@ const TagList = React.memo(({ tags, onRemove }) => (
   </TagListBlock>
 ));
 
-const TagInput = () => {
+const TagBox = ({ tags, onChangeTags }) => {
   const [input, setInput] = useState('');
   const [localTags, setLocalTags] = useState([]);
+
   const insertTag = useCallback(tag => {
     if (!tag) return;
     if (localTags.includes(tag)) return;
 
-    setLocalTags([...localTags, tag]);
-  }, [localTags]);
+    const nextTags = [...localTags, tag];
+
+    setLocalTags(nextTags);
+    onChangeTags(nextTags);
+  }, [localTags, onChangeTags]);
+
   const onRemove = useCallback(tag => {
-    setLocalTags(localTags.filter(t => t !== tag));
-  }, [localTags]);
+    const nextTags = localTags.filter(t => t !== tag);
+
+    setLocalTags(nextTags);
+    onChangeTags(nextTags);
+  }, [localTags, onChangeTags]);
+
   const onChange = useCallback(e => {
     setInput(e.target.value);
   }, []);
+
   const onSubmit = useCallback(e => {
     e.preventDefault();
     insertTag(input.trim());
     setInput('');
   }, [input, insertTag]);
+
+  useEffect(() => {
+    setLocalTags(tags);
+  }, [tags]);
 
   return (
     <TagInputBlock>
@@ -104,4 +118,4 @@ const TagListBlock = styled.div`
   margin-top: 0.5rem;
 `;
 
-export default TagInput;
+export default TagBox;
