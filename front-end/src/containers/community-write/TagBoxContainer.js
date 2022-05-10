@@ -7,9 +7,10 @@ const TagBoxContainer = () => {
   const tags = useSelector(state => state.write.tags);
   const onChangeTags = nextTags => {
     dispatch(changeField({
-      key: 'tags',
-      value: nextTags,
-    }));
+        key: 'tags',
+        value: nextTags,
+      }),
+    );
   };
 
   return <TagBox onChangeTags={onChangeTags} tags={tags} />;
