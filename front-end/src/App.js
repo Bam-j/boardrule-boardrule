@@ -7,6 +7,7 @@ import RegisterPage from './components/auth/RegisterPage';
 import CommunityMainPage from './components/community/CommunityMainPage';
 import GameRuleViewPage from './components/game-rule-page/GameRuleViewPage';
 import WritePage from './components/community/WritePage';
+import PostPage from './components/community/PostPage';
 
 const App = () => {
   return (
@@ -19,6 +20,8 @@ const App = () => {
         <Route path={'/rules'} element={<GameRuleViewPage />} />
         <Route path={'/write'} element={<WritePage />} />
         <Route path={'/@:username'}>
+          <Route index element={<CommunityMainPage />} />
+          <Route path={':postId'} element={<PostPage />} />
         </Route>
       </Routes>
     </>

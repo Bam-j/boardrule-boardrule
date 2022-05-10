@@ -8,12 +8,12 @@ const WriteActionButtonsContainer = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const { title, body, tags, post, postError } = useSelector(({ write }) => ({
-    title: write.title,
-    body: write.body,
-    tags: write.tags,
-    post: write.post,
-    postError: write.postError,
-  }));
+      title: write.title,
+      body: write.body,
+      tags: write.tags,
+      post: write.post,
+      postError: write.postError,
+    }));
 
   const onPublish = () => {
     dispatch(
@@ -37,7 +37,7 @@ const WriteActionButtonsContainer = () => {
       navigate(`/@${user.username}/${_id}`);
     }
 
-    //todo 등록에러 발생
+    //todo 등록에러 발생 => 아하! 로그인을 안해서 안되는 것 이었다!
     if (postError) {
       console.log('에러');
       console.log(postError);

@@ -1,5 +1,6 @@
 import React, { useCallback, useEffect, useState } from 'react';
 import styled from 'styled-components';
+import { AiOutlinePlus } from 'react-icons/ai';
 
 const TagItem = React.memo(({ tag, onRemove }) => <Tag onClick={() => onRemove(tag)}>#{tag}</Tag>);
 const TagList = React.memo(({ tags, onRemove }) => (
@@ -48,7 +49,7 @@ const TagBox = ({ tags, onChangeTags }) => {
       <h4>태그</h4>
       <TagForm onSubmit={onSubmit}>
         <input placeholder={'태그를 입력하세요.'} value={input} onChange={onChange} />
-        <button type={'submit'}>추가</button>
+        <button type={'submit'}><AiOutlinePlus /></button>
       </TagForm>
       <TagList tags={localTags} onRemove={onRemove} />
     </TagInputBlock>
