@@ -56,8 +56,7 @@ const TagBox = ({ tags, onChangeTags }) => {
   );
 };
 
-{/* TODO 태그입력란 꾸미기 */
-}
+{/* TODO 태그입력란 꾸미기 */}
 const TagInputBlock = styled.div`
   width: 100%;
   border-top: 1px solid #e9ecef;

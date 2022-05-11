@@ -37,7 +37,7 @@ const PostViewer = ({ post, error, loading }) => {
 
 {/* TODO 포스트 뷰어 페이지에 대해 디자인 개선이 필요! */}
 const PostViewerBlock = styled(Responsive)`
-  margin-top: 4rem;
+  margin-top: 1rem;
 `;
 
 const PostHead = styled.div`
