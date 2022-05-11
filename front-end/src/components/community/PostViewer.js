@@ -2,28 +2,40 @@ import React from 'react';
 import styled from 'styled-components';
 import Responsive from '../common/Responsive';
 
-const PostViewer = () => {
+const PostViewer = ({ post, error, loading }) => {
+  if (error) {
+    if (error.response && error.response.status === 404) {
+      return <PostViewerBlock>존재하지 않는 게시글입니다.</PostViewerBlock>;
+    }
+    return <PostViewerBlock>게시글을 불러오는 중 오류가 발생했습니다.</PostViewerBlock>;
+  }
+
+  if (loading || !post) {
+    return null;
+  }
+
+  const { title, body, user, publishedDate, tags } = post;
+
   return (
     <PostViewerBlock>
       <PostHead>
-        <h1>제목</h1>
+        <h1>{title}</h1>
         <PostInfo>
           <span>
             <b>tester</b>
           </span>
-          <span>{new Date().toLocaleDateString()}</span>
+          <span>{new Date(publishedDate).toLocaleDateString()}</span>
         </PostInfo>
         <Tags>
-          <div className={'tag'}>#태그1</div>
-          <div className={'tag'}>#태그2</div>
-          <div className={'tag'}>#태그3</div>
+          {tags.map(tag => <div className={'tag'}>#{tag}</div>)}
         </Tags>
       </PostHead>
-      <PostContent dangerouslySetInnerHTML={{ __html: '<p>html <b>내용</b>입니다.</p>' }} />
+      <PostContent dangerouslySetInnerHTML={{ __html: body }} />
     </PostViewerBlock>
   );
 };
 
+{/* TODO 포스트 뷰어 페이지에 대해 디자인 개선이 필요! */}
 const PostViewerBlock = styled(Responsive)`
   margin-top: 4rem;
 `;
