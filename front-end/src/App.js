@@ -16,7 +16,7 @@ const App = () => {
         <Route path={'/'} element={<MainPage />} />
         <Route path={'/login'} element={<LoginPage />} />
         <Route path={'/register'} element={<RegisterPage />} />
-        <Route path={'/community'} element={<CommunityMainPage />} />
+        <Route path={'/community'} element={<PostPage />} />
         <Route path={'/rules'} element={<GameRuleViewPage />} />
         <Route path={'/write'} element={<WritePage />} />
         <Route path={'/@:username'}>

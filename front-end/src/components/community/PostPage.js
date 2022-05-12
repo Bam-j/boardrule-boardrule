@@ -1,12 +1,12 @@
 import React from 'react';
 import HeaderContainer from '../../containers/common/HeaderContainer';
-import PostViewerContainer from '../../containers/community-write/PostViewerContainer';
+import PostList from './PostList';
 
 const PostPage = () => {
   return (
     <>
       <HeaderContainer />
-      <PostViewerContainer />
+      <PostList />
     </>
   );
 };
