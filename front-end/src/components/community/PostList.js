@@ -4,34 +4,44 @@ import Responsive from '../common/Responsive';
 import Button from '../common/Button';
 import PostInfo from '../common/PostInfo';
 import Tags from '../common/Tags';
+import { Link } from 'react-router-dom';
 
-const PostItem = () => {
+const PostItem = ({ post }) => {
+  const { publishedDate, user, tags, title, body, _id } = post;
+
   return (
     <PostItemBlock>
-      <h2>제목</h2>
-      <PostInfo username={'username'} publishedDate={new Date()} />
-      <Tags tags={['태그1', '태그2', '태그3']} />
-      <p>포스트 내용 미리보기</p>
+      <h2>
+        <Link to={`/@${user.username}/${_id}`}>{title}</Link>
+      </h2>
+      <PostInfo username={user.username} publishedDate={new Date(publishedDate)} />
+      <Tags tags={tags} />
+      <p>{body}</p>
     </PostItemBlock>
   );
 };
 
-const PostList = () => {
+const PostList = ({ posts, loading, error, showWriteButton }) => {
+  if (error) {
+    return <PostListBlock>페이지를 불러오는 중 오류가 발생했습니다.</PostListBlock>;
+  }
+
   return (
     <PostListBlock>
       <WritePostButtonWrapper>
-        <Button to={'/write'}>작성하기</Button>
+        {showWriteButton && (<Button to={'/write'}>작성하기</Button>)}
       </WritePostButtonWrapper>
-      <div>
-        <PostItem />
-        <PostItem />
-        <PostItem />
-      </div>
+      {!loading && posts && (
+        <div>
+          {posts.map(post => <PostItem post={post} key={post._id} />)}
+        </div>
+      )}
     </PostListBlock>
   );
 };
 
-{/*포스트 리스트 페이지 꾸미기*/}
+{/*포스트 리스트 페이지 꾸미기*/
+}
 const PostListBlock = styled(Responsive)`
   margin-top: 3rem;
 `;
