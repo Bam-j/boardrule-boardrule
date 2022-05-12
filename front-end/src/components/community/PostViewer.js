@@ -1,6 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 import Responsive from '../common/Responsive';
+import PostInfo from '../common/PostInfo';
+import Tags from '../common/Tags';
 
 const PostViewer = ({ post, error, loading }) => {
   if (error) {
@@ -20,22 +22,16 @@ const PostViewer = ({ post, error, loading }) => {
     <PostViewerBlock>
       <PostHead>
         <h1>{title}</h1>
-        <PostInfo>
-          <span>
-            <b>tester</b>
-          </span>
-          <span>{new Date(publishedDate).toLocaleDateString()}</span>
-        </PostInfo>
-        <Tags>
-          {tags.map(tag => <div className={'tag'}>#{tag}</div>)}
-        </Tags>
+        <PostInfo username={user.username} publishedDate={publishedDate} hasMarginTop />
+        <Tags tags={tags} />
       </PostHead>
       <PostContent dangerouslySetInnerHTML={{ __html: body }} />
     </PostViewerBlock>
   );
 };
 
-{/* TODO 포스트 뷰어 페이지에 대해 디자인 개선이 필요! */}
+{/* TODO 포스트 뷰어 페이지에 대해 디자인 개선이 필요! */
+}
 const PostViewerBlock = styled(Responsive)`
   margin-top: 1rem;
 `;
@@ -49,35 +45,6 @@ const PostHead = styled.div`
     font-size: 3rem;
     line-height: 1.5;
     margin: 0;
-  }
-`;
-
-const PostInfo = styled.div`
-  margin-top: 1rem;
-  color: #868e96;
-
-  span + span {
-    color: #adb5bd;
-    padding-left: 0.25rem;
-    padding-right: 0.25rem;
-    content: '\\B7';
-  }
-`;
-
-const Tags = styled.div`
-  margin-top: 0.5rem;
-
-  .tag {
-    display: inline-block;
-    background-color: #868e96;
-    border-radius: 8px;
-    text-decoration: none;
-    margin-right: 0.5rem;
-
-    &:hover {
-      background-color: #797a82;
-      color: #f1f3f5;
-    }
   }
 `;
 
