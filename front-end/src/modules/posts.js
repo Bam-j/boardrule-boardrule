@@ -23,6 +23,7 @@ export function* postsSaga() {
 const initialState = {
   posts: null,
   error: null,
+  lastPage: 1,
 };
 
 const posts = handleActions(
@@ -30,6 +31,7 @@ const posts = handleActions(
     [LIST_POSTS_SUCCESS]: (state, { payload: posts }) => ({
       ...state,
       posts,
+      lastPage: parseInt(response.headers['last-page'], 10),
     }),
     [LIST_POST_FAILURE]: (state, { payload: error }) => ({
       ...state,
