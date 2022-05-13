@@ -2,10 +2,10 @@ import React, { useCallback, useEffect, useState } from 'react';
 import styled from 'styled-components';
 import { AiOutlinePlus } from 'react-icons/ai';
 
-const TagItem = React.memo(({ tag, onRemove }) => <Tag onClick={() => onRemove(tag)}>#{tag}</Tag>);
+const TagItem = React.memo(({ tag, onRemove, onChangeTags }) => <Tag onClick={() => onRemove(tag)}>#{tag}</Tag>);
 const TagList = React.memo(({ tags, onRemove }) => (
   <TagListBlock>
-    {tags.map(tag => <TagItem key={tag} tag={tag} onRemove={onRemove} />)}
+    {tags && tags.map(tag => <TagItem key={tag} tag={tag} onRemove={onRemove} />)}
   </TagListBlock>
 ));
 
@@ -56,7 +56,8 @@ const TagBox = ({ tags, onChangeTags }) => {
   );
 };
 
-{/* TODO 태그입력란 꾸미기 */}
+{/* TODO 태그입력란 꾸미기 */
+}
 const TagInputBlock = styled.div`
   width: 100%;
   border-top: 1px solid #e9ecef;

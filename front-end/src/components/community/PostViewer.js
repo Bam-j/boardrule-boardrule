@@ -4,7 +4,7 @@ import Responsive from '../common/Responsive';
 import PostInfo from '../common/PostInfo';
 import Tags from '../common/Tags';
 
-const PostViewer = ({ post, error, loading }) => {
+const PostViewer = ({ post, error, loading, actionButtons }) => {
   if (error) {
     if (error.response && error.response.status === 404) {
       return <PostViewerBlock>존재하지 않는 게시글입니다.</PostViewerBlock>;
@@ -25,6 +25,7 @@ const PostViewer = ({ post, error, loading }) => {
         <PostInfo username={user.username} publishedDate={publishedDate} hasMarginTop />
         <Tags tags={tags} />
       </PostHead>
+      {actionButtons}
       <PostContent dangerouslySetInnerHTML={{ __html: body }} />
     </PostViewerBlock>
   );
