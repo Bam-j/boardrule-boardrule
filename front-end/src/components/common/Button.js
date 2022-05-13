@@ -34,6 +34,12 @@ const styledOfButton = css`
     width: 100%;
     font-size: 1.125rem;
   `}
+  
+  &:disabled {
+    background: #dee2e6;
+    color: #adb5bd;
+    cursor: not-allowed;
+  }
 `;
 
 const StyledButton = styled.button`
