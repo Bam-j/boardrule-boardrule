@@ -13,7 +13,7 @@ const Button = props => {
  */
 const styledOfButton = css`
   border: none;
-  border-radius: 3px;
+  border-radius: 4px;
   font-size: 1rem;
   font-weight: bolder;
   padding: 0.25rem 1rem;

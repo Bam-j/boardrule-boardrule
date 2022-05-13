@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
+import Button from './Button';
 
 /*
 *  Header 컴포넌트는 메인 페이지의 헤더(로고, 검색, 서브메뉴)를 렌더링 하는 컴포넌트 입니다.
@@ -24,11 +25,11 @@ const Header = ({ type, user, onLogout }) => {
         )}
         <StyledMenuItem><DivideBar> | </DivideBar></StyledMenuItem>
         {user ? (
-          <StyledMenuItem>
-            <UserInfo>{user.username} 님 </UserInfo>
-            {/* TODO 로그아웃 버튼 꾸미고 위치 조절해야함 */}
+          <StyledUserInfo>
+            <UserInfo>{user.username} 님</UserInfo>
+            {/* TODO 로그아웃 버튼의 스타일에 대해 다시 생각해봐야할듯 */}
             <LogoutButton onClick={onLogout}>로그아웃</LogoutButton>
-          </StyledMenuItem>
+          </StyledUserInfo>
         ) : (
           <Link to={'/login'}>
             <StyledMenuItem>로그인</StyledMenuItem>
@@ -102,7 +103,7 @@ const StyledNav = styled.nav`
   margin-left: auto;
 `;
 
-const StyledMenuItem = styled.span`
+const menuStyle = css`
   justify-content: flex-end;
   float: right;
   font-family: 'Dongle';
@@ -123,6 +124,19 @@ const StyledMenuItem = styled.span`
   }
 `;
 
+const StyledMenuItem = styled.span`
+  ${menuStyle}
+`;
+
+const StyledUserInfo = styled.span`
+  ${menuStyle}
+  
+  & {
+    display: flex;
+    justify-content: flex-start;
+  }
+`;
+
 const DivideBar = styled.span`
   cursor: default;
   font-weight: bold;
@@ -131,17 +145,14 @@ const DivideBar = styled.span`
 
 const UserInfo = styled.div`
   margin-left: 1rem;
+  margin-right: 0.5rem;
   cursor: default;
+  color: #000000;
 `;
 
-const LogoutButton = styled.span`
-  color: #000000;
-  cursor: pointer;
-
-  &:hover {
-    cursor: pointer;
-    color: #6e6e6e;
-  }
+const LogoutButton = styled(Button)`
+  font-size: 0.25rem;
+  margin-top: 0.125rem;
 `;
 
 export default Header;
