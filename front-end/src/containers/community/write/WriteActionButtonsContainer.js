@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { writePost } from '../../modules/write';
-import WriteActionButtons from '../../components/community/write/WriteActionButtons';
+import { writePost } from '../../../modules/write';
+import WriteActionButtons from '../../../components/community/write/WriteActionButtons';
 
 const WriteActionButtonsContainer = () => {
   const navigate = useNavigate();
@@ -33,13 +33,10 @@ const WriteActionButtonsContainer = () => {
     if (post) {
       const { _id, user } = post;
 
-      console.log('성공');
       navigate(`/@${user.username}/${_id}`);
     }
 
-    //todo 등록에러 발생 => 아하! 로그인을 안해서 안되는 것 이었다!
     if (postError) {
-      console.log('에러');
       console.log(postError);
     }
   }, [navigate, post, postError]);

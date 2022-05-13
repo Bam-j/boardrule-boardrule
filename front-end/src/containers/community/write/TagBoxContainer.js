@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from 'react-redux';
-import { changeField } from '../../modules/write';
-import TagBox from '../../components/community/write/TagBox';
+import { changeField } from '../../../modules/write';
+import TagBox from '../../../components/community/write/TagBox';
 
 const TagBoxContainer = () => {
   const dispatch = useDispatch();

@@ -1,6 +1,6 @@
 import React from 'react';
 import HeaderContainer from '../../containers/common/HeaderContainer';
-import PostsListContainer from '../../containers/posts/PostsListContainer';
+import PostsListContainer from '../../containers/community/PostsListContainer';
 
 const PostListPage = () => {
   return (
