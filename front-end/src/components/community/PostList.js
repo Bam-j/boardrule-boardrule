@@ -11,12 +11,12 @@ const PostItem = ({ post }) => {
 
   return (
     <PostItemBlock>
-      <h2>
-        <Link to={`/@${user.username}/${_id}`}>{title}</Link>
-      </h2>
+      <p>
+        <PostTitle to={`/@${user.username}/${_id}`}>{title}</PostTitle>
+      </p>
       <PostInfo username={user.username} publishedDate={new Date(publishedDate)} />
       <Tags tags={tags} />
-      <p>{body}</p>
+      {/*<p>{body}</p>*/}
     </PostItemBlock>
   );
 };
@@ -43,18 +43,19 @@ const PostList = ({ posts, loading, error, showWriteButton }) => {
 {/*포스트 리스트 페이지 꾸미기*/
 }
 const PostListBlock = styled(Responsive)`
-  margin-top: 3rem;
+  margin-top: 0;
+  border: 1px solid green;
 `;
 
 const WritePostButtonWrapper = styled.div`
   display: flex;
   justify-content: flex-end;
-  margin-bottom: 3rem;
+  margin-bottom: 2.5rem;
 `;
 
 const PostItemBlock = styled.div`
-  padding-top: 3rem;
-  padding-bottom: 3rem;
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
 
   &:first-child {
     padding-top: 0;
@@ -64,8 +65,9 @@ const PostItemBlock = styled.div`
     border-top: 1px solid #e9ecef;
   }
 
-  h2 {
-    font-size: 2rem;
+  p {
+    font-size: 1rem;
+    text-decoration: none;
     margin-bottom: 0;
     margin-top: 0;
 
@@ -73,9 +75,14 @@ const PostItemBlock = styled.div`
       color: #868e96;
     }
   }
+`;
 
-  p {
-    margin-top: 2rem;
+const PostTitle = styled(Link)`
+  text-decoration: none;
+  color: #000000;
+  
+  &:hover, &:active {
+    color: #6e6e6e;
   }
 `;
 

@@ -48,13 +48,13 @@ const SearchIcon = styled.button`
   position: relative;
   left: 30%;
   display: inline-block;
-  color: #010101;
+  color: #000000;
   outline: none;
   border-style: none;
   cursor: pointer;
 
-  &:active {
-    color: #3e3e3e;
+  &:hover {
+    color: #6e6e6e;
   }
 `;
 

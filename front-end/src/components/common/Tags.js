@@ -17,6 +17,7 @@ const StyledTagsBlock = styled.div`
 
   .tag {
     display: inline-block;
+    font-size: 0.5rem;
     color: #1098ad;
     text-decoration: none;
     margin-right: 0.5rem;

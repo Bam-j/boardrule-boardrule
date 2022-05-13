@@ -49,7 +49,7 @@ const StyledHeader = styled.header`
   position: relative;
   flex-wrap: wrap;
   justify-content: flex-start;
-  margin-bottom: 2rem;
+  margin-bottom: 0; //memo: 기존 길이 2rem
   /*background-color: #eadf6a;*/
   -ms-user-select: none;
   -moz-user-select: none;
@@ -63,7 +63,7 @@ const StyledHeader = styled.header`
     position: relative;
     flex-wrap: wrap;
     justify-content: flex-start;
-    margin-bottom: 2rem;
+    margin-bottom: 0;
     /*background-color: #eadf6a;*/
   }
 
@@ -111,16 +111,22 @@ const StyledMenuItem = styled.span`
   color: #000;
   margin-right: 1rem;
 
-  &:link, &:visited, &:hover, &:active {
+  &:link, &:visited {
     cursor: pointer;
-    color: #000;
+    color: #000000;
     text-decoration: none
+  }
+
+  &:hover {
+    cursor: pointer;
+    color: #6e6e6e;
   }
 `;
 
 const DivideBar = styled.span`
   cursor: default;
   font-weight: bold;
+  color: #000000;
 `;
 
 const UserInfo = styled.div`
@@ -129,9 +135,12 @@ const UserInfo = styled.div`
 `;
 
 const LogoutButton = styled.span`
-  color: #868e96;
+  color: #000000;
+  cursor: pointer;
 
-  &:hover &:active {
+  &:hover {
+    cursor: pointer;
+    color: #6e6e6e;
   }
 `;
 
