@@ -24,7 +24,7 @@ const Pagination = ({ page, lastPage, username, tag }) => {
   );
 };
 
-const StyledPaginationBlock = styled`
+const StyledPaginationBlock = styled.div`
   width: 320px;
   display: flex;
   justify-content: space-between;

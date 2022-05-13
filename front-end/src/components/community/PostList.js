@@ -7,7 +7,7 @@ import Tags from '../common/Tags';
 import { Link } from 'react-router-dom';
 
 const PostItem = ({ post }) => {
-  const { publishedDate, user, tags, title, body, _id } = post;
+  const { publishedDate, user, tags, title, _id } = post;
 
   return (
     <PostItemBlock>
@@ -16,7 +16,6 @@ const PostItem = ({ post }) => {
       </p>
       <PostInfo username={user.username} publishedDate={new Date(publishedDate)} />
       <Tags tags={tags} />
-      {/*<p>{body}</p>*/}
     </PostItemBlock>
   );
 };
