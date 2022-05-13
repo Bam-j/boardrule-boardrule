@@ -1,15 +1,17 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
+import { Link } from 'react-router-dom';
 
 /*
 * 로그인과 회원가입에서 재사용될 버튼 컴포넌트
  */
-const Button = props => <StyledButton {...props} />;
-
+const Button = props => {
+  return props.to ? <StyledLink {...props} /> : <StyledButton {...props} />;
+};
 /*
 * styled-components 코드
  */
-const StyledButton = styled.button`
+const styledOfButton = css`
   border: none;
   border-radius: 3px;
   font-size: 1rem;
@@ -18,8 +20,11 @@ const StyledButton = styled.button`
   outline: none;
   cursor: pointer;
   background: #eadf6a;
+  text-decoration: none;
+  color: #000000;
 
   &:hover {
+    color: #6e6e6e;
     background: #edeaab;
   }
 
@@ -29,6 +34,14 @@ const StyledButton = styled.button`
     width: 100%;
     font-size: 1.125rem;
   `}
+`;
+
+const StyledButton = styled.button`
+  ${styledOfButton}
+`;
+
+const StyledLink = styled(Link)`
+  ${styledOfButton}
 `;
 
 export default Button;

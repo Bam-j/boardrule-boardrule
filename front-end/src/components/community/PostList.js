@@ -29,7 +29,7 @@ const PostList = ({ posts, loading, error, showWriteButton }) => {
   return (
     <PostListBlock>
       <WritePostButtonWrapper>
-        {showWriteButton && (<Button to={'/write'}>작성하기</Button>)}
+        {showWriteButton && <Button to={'/write'}>작성하기</Button>}
       </WritePostButtonWrapper>
       {!loading && posts && (
         <div>
