@@ -8,10 +8,14 @@ import GameRuleViewPage from './components/game-rule-page/GameRuleViewPage';
 import WritePage from './components/community/WritePage';
 import PostPage from './components/community/PostPage';
 import PostListPage from './components/community/PostListPage';
+import { Helmet } from 'react-helmet-async';
 
 const App = () => {
   return (
     <>
+      <Helmet>
+        <title>Boardrule Boardrule</title>
+      </Helmet>
       <Routes>
         <Route path={'/'} element={<MainPage />} />
         <Route path={'/login'} element={<LoginPage />} />

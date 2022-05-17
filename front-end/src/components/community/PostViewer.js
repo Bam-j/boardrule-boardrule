@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import Responsive from '../common/Responsive';
 import PostInfo from '../common/PostInfo';
 import Tags from '../common/Tags';
+import { Helmet } from 'react-helmet-async';
 
 const PostViewer = ({ post, error, loading, actionButtons }) => {
   if (error) {
@@ -20,6 +21,9 @@ const PostViewer = ({ post, error, loading, actionButtons }) => {
 
   return (
     <PostViewerBlock>
+      <Helmet>
+        <title>{title} - Boardrule Boardrule</title>
+      </Helmet>
       <PostHead>
         <h1>{title}</h1>
         <PostInfo username={user.username} publishedDate={publishedDate} hasMarginTop />

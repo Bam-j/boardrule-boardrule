@@ -3,6 +3,7 @@ import GameList from './GameList';
 import imgSrc from '../../img/testImg.png';
 import SearchBox from './SearchBox';
 import HeaderContainer from '../../containers/common/HeaderContainer';
+import { Helmet } from 'react-helmet-async';
 
 const MainPage = () => {
   const [games, setGames] = useState([
@@ -34,6 +35,9 @@ const MainPage = () => {
 
   return (
     <>
+      <Helmet>
+        <title>Boardrule Boardrule</title>
+      </Helmet>
       <HeaderContainer type={'home'} />
       {/*<Header type={'home'} />*/}
       <SearchBox />
