@@ -19,8 +19,8 @@ const PostActionButtons = ({ onEdit, onRemove }) => {
   return (
     <>
       <StyledActionButtonsBlock>
-        <StyledActionButton onClick={onEdit}>수정</StyledActionButton>
-        <StyledActionButton onClick={onRemoveClick}>삭제</StyledActionButton>
+        <StyledPostActionButton onClick={onEdit}>수정</StyledPostActionButton>
+        <StyledPostActionButton onClick={onRemoveClick}>삭제</StyledPostActionButton>
       </StyledActionButtonsBlock>
       <AskModal visible={modal} onConfirm={onConfirm} onCancel={onCancel} />
     </>
@@ -34,7 +34,7 @@ const StyledActionButtonsBlock = styled.div`
   margin-bottom: 2rem;
 `;
 
-const StyledActionButton = styled.button`
+const StyledPostActionButton = styled.button`
   padding: 0.25rem 0.5rem;
   border-radius: 4px;
   color: #868e96;
@@ -46,7 +46,7 @@ const StyledActionButton = styled.button`
 
   &:hover {
     background: #f1f3f5;
-    color: #1098ad;
+    color: #edeaab;
   }
 
   & + & {
