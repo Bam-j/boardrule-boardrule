@@ -71,7 +71,6 @@ const StyledHeader = styled.header`
   @media (max-width: 768px) {
     width: 100%;
   }
-  border: solid 1px red;
 `;
 
 const Title = styled.h3`

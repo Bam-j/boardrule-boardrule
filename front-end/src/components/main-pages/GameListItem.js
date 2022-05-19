@@ -8,13 +8,12 @@ import { Link } from 'react-router-dom';
 const GameListItem = ({ game }) => {
   const { gameImgSrc, gameTitle, gameDescription } = game;
 
-  console.log(gameImgSrc);
-
   return (
     <>
       <StyledGameListItemLink to={'/rules'}>
         <StyledGameListItem>
           <GameImage><img src={gameImgSrc} className={'GameListItem-game-image'} alt={'Game'} /></GameImage>
+          <br/><br/>
           <h3 id={'game-title'}>{gameTitle}</h3>
           <p id={'game-description'}>{gameDescription}</p>
         </StyledGameListItem>
@@ -36,32 +35,43 @@ const StyledGameListItemLink = styled(Link)`
 
 const StyledGameListItem = styled.div`
   display: inline-block;
+  width: 25%;
+  height: 30%;
   font-family: Fredoka;
-  width: 90%;
   cursor: pointer;
   margin-left: 1rem;
   margin-right: 1rem;
   margin-bottom: 2rem;
+  padding-left: 0.5rem;
   background-color: #e9ecef;
   border-radius: 4px;
   box-shadow: 0.125rem 0.125rem #a9acaf;
-
-  border: solid 1px blue;
-
-  @media (min-width: 768px) {
-    width: auto;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  
+  h3 {
+    font-size: small;
   }
-  @media (min-width: 1024px) {
-    width: auto;
+  
+  p {
+    font-size: 0.125rem;
   }
 `;
 
 const GameImage = styled.div`
+  position: relative;
   -ms-user-select: none;
   -moz-user-select: none;
   -khtml-user-select: none;
   -webkit-user-select: none;
   user-select: none;
+  margin-top: 0.25rem;
+  
+  img {
+    width: 20%;
+    position: absolute;
+    left: 35%;
+  }
 `;
 
 export default React.memo(GameListItem);

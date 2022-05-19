@@ -46,16 +46,6 @@ const StyledGameList = styled(List)`
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
-
-  @media (max-width: 1024px) {
-    width: 768px;
-  }
-
-  @media (max-width: 768px) {
-    width: 100%;
-  }
-
-  border: solid 1px yellow;
 `;
 
 export default GameList;
