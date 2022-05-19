@@ -1,12 +1,16 @@
 import React from 'react';
 import styled from 'styled-components';
+import Header from './Header';
 
-const RuleViewer = () => {
+const RuleViewer = ({ imgSrc, descriptionText }) => {
   return (
-    <StyledRuleViewBox>
-      <StyledDescriptionImage />
-      <StyledDescriptionText />
-    </StyledRuleViewBox>
+    <>
+      <Header type={'rules'} />
+      <StyledRuleViewBox>
+        <StyledDescriptionImage src={imgSrc} />
+        <StyledDescriptionText>{descriptionText}</StyledDescriptionText>>
+      </StyledRuleViewBox>
+    </>
   );
 };
 

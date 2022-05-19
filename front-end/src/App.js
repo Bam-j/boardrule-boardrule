@@ -27,6 +27,9 @@ const App = () => {
           <Route index element={<PostListPage />} />
           <Route path={':postId'} element={<PostPage />} />
         </Route>
+        <Route path={'/@:game'}>
+          <Route path={':gameTitle'} element={<GameRuleViewPage />} />
+        </Route>
       </Routes>
     </>
   );

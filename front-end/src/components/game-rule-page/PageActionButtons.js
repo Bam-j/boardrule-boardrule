@@ -1,12 +1,21 @@
 import React from 'react';
 import styled from 'styled-components';
 import Button from '../common/Button';
+import { useNavigate } from 'react-router-dom';
 
-const PageActionButtons = () => {
+const PageActionButtons = ({ isFirstPage }) => {
+  const navigate = useNavigate();
+
   return (
     <StyledPageActionButtonsBlock>
-      <Button>이전</Button>
-      <Button>다음</Button>
+      {isFirstPage ? (
+        <Button>다음</Button>
+      ) : (
+        <div>
+          <Button onClick={() => navigate(-1)}>이전</Button>
+          <Button>다음</Button>
+        </div>
+      )}
     </StyledPageActionButtonsBlock>
   );
 };
