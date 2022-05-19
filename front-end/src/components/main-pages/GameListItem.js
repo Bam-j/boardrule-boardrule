@@ -10,7 +10,7 @@ const GameListItem = ({ game }) => {
 
   return (
     <>
-      <StyledGameListItemLink to={'/rules'}>
+      <StyledGameListItemLink to={`/${gameTitle}`}>
         <StyledGameListItem>
           <GameImage><img src={gameImgSrc} className={'GameListItem-game-image'} alt={'Game'} /></GameImage>
           <br/><br/>

@@ -9,6 +9,7 @@ import WritePage from './components/community/WritePage';
 import PostPage from './components/community/PostPage';
 import PostListPage from './components/community/PostListPage';
 import { Helmet } from 'react-helmet-async';
+import RuleViewer from './components/common/RuleViewer';
 
 const App = () => {
   return (
@@ -27,9 +28,7 @@ const App = () => {
           <Route index element={<PostListPage />} />
           <Route path={':postId'} element={<PostPage />} />
         </Route>
-        <Route path={'/@:game'}>
-          <Route path={':gameTitle'} element={<GameRuleViewPage />} />
-        </Route>
+        <Route path={':gameTitle'} element={<RuleViewer />}></Route>
       </Routes>
     </>
   );

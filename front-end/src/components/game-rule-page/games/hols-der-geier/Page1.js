@@ -4,7 +4,6 @@ Hol's Der Geier -> 한글 발매명: 독수리 눈치싸움
 import React from 'react';
 import RuleViewer from '../../../common/RuleViewer';
 import PageActionButtons from '../../PageActionButtons';
-import Header from '../../../common/Header';
 import imgSrc from '../../../../img/hols-der-geier-img/eaglebox-title.jpg';
 
 export const holsDerGeier = {
@@ -20,9 +19,8 @@ const Page1 = () => {
 
   return (
     <>
-      <Header type={'rules'} />
       <RuleViewer
-        imgSrc={'../../../../img/hols-der-geier-img/eagle-page-0001.jpg'}
+        imgSrc={imgSrc}
         descriptionText={description} />
       <PageActionButtons isFirstPage={true} />
     </>

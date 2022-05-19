@@ -1,21 +1,22 @@
 import React from 'react';
 import styled from 'styled-components';
-import Header from './Header';
+import HeaderContainer from '../../containers/common/HeaderContainer';
 
 const RuleViewer = ({ imgSrc, descriptionText }) => {
   return (
     <>
-      <Header type={'rules'} />
+      <HeaderContainer type={'rules'} />
       <StyledRuleViewBox>
         <StyledDescriptionImage src={imgSrc} />
-        <StyledDescriptionText>{descriptionText}</StyledDescriptionText>>
+        <StyledDescriptionText>{descriptionText}</StyledDescriptionText>
       </StyledRuleViewBox>
     </>
   );
 };
 
 const StyledRuleViewBox = styled.div`
-  background: #e9ecef;
+  //background: #e9ecef;
+  border: solid 1px red;
   display: flex;
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
