@@ -1,4 +1,4 @@
-import imgSrc from '../../../../img/no-thanks/nothanks_title.jpg';
+import imgSrc from '../../../../img/no-thanks/nothanks-title.jpg';
 
 export const noThanks = {
   id: 'nts',

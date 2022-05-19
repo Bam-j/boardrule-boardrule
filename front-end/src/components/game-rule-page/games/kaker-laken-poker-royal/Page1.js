@@ -1,4 +1,4 @@
-import imgSrc from '../../../../img/kaker-laken-poker-royal-img/bakuipoker_title.jpg';
+import imgSrc from '../../../../img/kaker-laken-poker-royal-img/bakuipoker-title.jpg';
 
 export const kakerLakenPokerRoyal = {
   id: 'klpr',
