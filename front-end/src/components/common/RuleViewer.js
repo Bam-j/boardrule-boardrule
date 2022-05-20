@@ -1,10 +1,12 @@
 import React from 'react';
 import styled from 'styled-components';
 import HeaderContainer from '../../containers/common/HeaderContainer';
+import { Helmet } from 'react-helmet-async';
 
-const RuleViewer = ({ imgSrc, descriptionText }) => {
+const RuleViewer = ({ imgSrc, gameTitle, descriptionText }) => {
   return (
     <>
+      <Helmet>{gameTitle} Rule - Boardrule Boardrule</Helmet>
       <HeaderContainer type={'rules'} />
       <StyledRuleViewBox>
         <StyledDescriptionImage src={imgSrc} />

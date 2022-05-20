@@ -1,8 +1,20 @@
-import imgSrc from '../../../../img/kaker-laken-poker-royal-img/bakuipoker-title.jpg';
+import React from 'react';
+import RuleViewer from '../../../common/RuleViewer';
+import PageActionButtons from '../../PageActionButtons';
+import { kakerLakenPokerRoyal } from './kakerLakenPokerRoyal';
 
-export const kakerLakenPokerRoyal = {
-  id: 'klpr',
-  gameImgSrc: imgSrc,
-  gameTitle: '바퀴 벌레 포커',
-  gameDescription: '동물 친구들과 함께하는 심리전',
+const Page1 = () => {
+  const description = '설명에 대한 테스트 문구입니다.';
+
+  return (
+    <>
+    <RuleViewer
+      imgSrc={kakerLakenPokerRoyal.gameImgSrc}
+      gameTitle={kakerLakenPokerRoyal.gameTitle}
+      descriptionText={description} />
+      <PageActionButtons isFirstPage />
+    </>
+  );
 };
+
+export default Page1;
