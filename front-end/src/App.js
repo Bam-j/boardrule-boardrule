@@ -4,12 +4,11 @@ import { Route, Routes } from 'react-router-dom';
 import MainPage from './components/main-pages/MainPage';
 import LoginPage from './components/auth/LoginPage';
 import RegisterPage from './components/auth/RegisterPage';
-import GameRuleViewPage from './components/game-rule-page/GameRuleViewPage';
+import GameRuleViewer from './components/game-rule-page/GameRuleViewer';
 import WritePage from './components/community/WritePage';
 import PostPage from './components/community/PostPage';
 import PostListPage from './components/community/PostListPage';
 import { Helmet } from 'react-helmet-async';
-import RuleViewer from './components/common/RuleViewer';
 
 const App = () => {
   return (
@@ -22,13 +21,13 @@ const App = () => {
         <Route path={'/login'} element={<LoginPage />} />
         <Route path={'/register'} element={<RegisterPage />} />
         <Route path={'/community'} element={<PostListPage />} />
-        <Route path={'/rules'} element={<GameRuleViewPage />} />
+        <Route path={'/rules'} element={<GameRuleViewer />} />
         <Route path={'/write'} element={<WritePage />} />
         <Route path={'/@:username'}>
           <Route index element={<PostListPage />} />
           <Route path={':postId'} element={<PostPage />} />
         </Route>
-        <Route path={':gameTitle'} element={<RuleViewer />}></Route>
+        <Route path={':gameTitle'} element={<GameRuleViewer />}></Route>
       </Routes>
     </>
   );

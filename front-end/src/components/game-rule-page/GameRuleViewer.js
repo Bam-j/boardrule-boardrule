@@ -1,16 +1,29 @@
 import React from 'react';
 import styled from 'styled-components';
-import HeaderContainer from '../../containers/common/HeaderContainer';
 import { Helmet } from 'react-helmet-async';
+import HeaderContainer from '../../containers/common/HeaderContainer';
+import PageActionButtons from './PageActionButtons';
 
-const RuleViewer = ({ imgSrc, gameTitle, descriptionText }) => {
+const GameRuleViewer = ({ imgSrc, gameTitle, descriptionText }) => {
+  /* TODO 이 컴포넌트에서 각 게임에 대한 페이지를 렌더링해야함
+  return (
+    <>
+      <RuleViewer
+        imgSrc={imgSrc} descriptionText={description}
+      />
+      <PageActionButtons isFirstPage />
+    </>
+  );
+  */
+
   return (
     <>
       <Helmet>{gameTitle} Rule - Boardrule Boardrule</Helmet>
-      <HeaderContainer type={'rules'} />
+      <HeaderContainer type={'rule'} />
       <StyledRuleViewBox>
         <StyledDescriptionImage src={imgSrc} />
         <StyledDescriptionText>{descriptionText}</StyledDescriptionText>
+        <PageActionButtons />
       </StyledRuleViewBox>
     </>
   );
@@ -40,4 +53,4 @@ const StyledDescriptionText = styled.p`
   align-content: center;
 `;
 
-export default RuleViewer;
+export default GameRuleViewer;

@@ -1,14 +1,14 @@
 import React from 'react';
-import RuleViewer from '../../../common/RuleViewer';
 import PageActionButtons from '../../PageActionButtons';
 import { noThanks } from './noThanks';
+import GameRuleViewer from '../../GameRuleViewer';
 
 const Page1 = () => {
   const description = '설명에 대한 테스트 문구입니다.';
 
   return (
     <>
-      <RuleViewer
+      <GameRuleViewer
         imgSrc={noThanks.gameImgSrc}
         gameTitle={noThanks.gameTitle}
         descriptionText={description}
