@@ -5,16 +5,7 @@ import HeaderContainer from '../../containers/common/HeaderContainer';
 import PageActionButtons from './PageActionButtons';
 
 const GameRuleViewer = ({ imgSrc, gameTitle, descriptionText }) => {
-  /* TODO 이 컴포넌트에서 각 게임에 대한 페이지를 렌더링해야함
-  return (
-    <>
-      <RuleViewer
-        imgSrc={imgSrc} descriptionText={description}
-      />
-      <PageActionButtons isFirstPage />
-    </>
-  );
-  */
+  /* TODO 이 컴포넌트에서 각 게임에 대한 페이지를 렌더링해야함 */
 
   return (
     <>
@@ -23,7 +14,7 @@ const GameRuleViewer = ({ imgSrc, gameTitle, descriptionText }) => {
       <StyledRuleViewBox>
         <StyledDescriptionImage src={imgSrc} />
         <StyledDescriptionText>{descriptionText}</StyledDescriptionText>
-        <PageActionButtons />
+        <PageActionButtons isFirstPage={false} />
       </StyledRuleViewBox>
     </>
   );

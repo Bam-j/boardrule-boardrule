@@ -9,11 +9,11 @@ const PageActionButtons = ({ isFirstPage }) => {
   return (
     <StyledPageActionButtonsBlock>
       {isFirstPage ? (
-        <Button>다음</Button>
+        <Button className={'nextButton'}>다음</Button>
       ) : (
         <div>
-          <Button onClick={() => navigate(-1)}>이전</Button>
-          <Button>다음</Button>
+          <Button className={'prevButton'} onClick={() => navigate(-1)}>이전</Button>
+          <Button className={'nextButton'}>다음</Button>
         </div>
       )}
     </StyledPageActionButtonsBlock>
@@ -25,6 +25,14 @@ const StyledPageActionButtonsBlock = styled.div`
   justify-content: flex-end;
   margin-top: -1.5rem;
   margin-bottom: 2rem;
+  
+  .prevButton {
+    margin-right: 5rem;
+  }
+  
+  .nextButton {
+    margin-left: 5rem;
+  }
 `;
 
 export default PageActionButtons;
