@@ -35,6 +35,9 @@ const StyledDescriptionImage = styled.img`
   display: flex;
   justify-content: center;
   align-content: center;
+  padding-left: 2rem;
+  
+  border: 1px solid green;
 `;
 
 const StyledDescriptionText = styled.p`
@@ -42,6 +45,9 @@ const StyledDescriptionText = styled.p`
   display: flex;
   justify-content: center;
   align-content: center;
+  padding-left: 1rem;
+  
+  border: 1px solid blue;
 `;
 
 export default GameRuleViewer;
