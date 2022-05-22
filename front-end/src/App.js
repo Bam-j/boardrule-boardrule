@@ -27,7 +27,7 @@ const App = () => {
           <Route index element={<PostListPage />} />
           <Route path={':postId'} element={<PostPage />} />
         </Route>
-        <Route path={':gameTitle'} element={<GameRuleViewer />}></Route>
+        <Route path={':gameId'} element={<GameRuleViewer />}></Route>
       </Routes>
     </>
   );

@@ -6,11 +6,11 @@ import { Link } from 'react-router-dom';
 *  GameListItem 컴포넌트는 게임 리스트 내의 개별 게임들에 대한 것을 렌더링하는 컴포넌트입니다.
  */
 const GameListItem = ({ game }) => {
-  const { gameImgSrc, gameTitle, gameDescription } = game;
+  const { gameId, gameImgSrc, gameTitle, gameDescription } = game;
 
   return (
     <>
-      <StyledGameListItemLink to={`/${gameTitle}`}>
+      <StyledGameListItemLink to={`/${gameId}`}>
         <StyledGameListItem>
           <GameImage><img src={gameImgSrc} className={'GameListItem-game-image'} alt={'Game'} /></GameImage>
           <br/><br/>
