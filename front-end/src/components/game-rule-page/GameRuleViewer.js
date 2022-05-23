@@ -20,8 +20,6 @@ const GameRuleViewer = ({ imgSrc, gameTitle, descriptionText }) => {
 };
 
 const StyledRuleViewBox = styled.div`
-  //background: #e9ecef;
-  border: solid 1px red;
   display: flex;
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
@@ -35,8 +33,8 @@ const StyledDescriptionImage = styled.img`
   justify-content: center;
   align-content: center;
   padding-left: 2rem;
-  
-  border: 1px solid green;
+  width: 300px;
+  height: 200px;
 `;
 
 const StyledDescriptionText = styled.p`

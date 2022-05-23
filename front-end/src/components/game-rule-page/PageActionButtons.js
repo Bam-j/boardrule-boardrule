@@ -27,11 +27,13 @@ const StyledPageActionButtonsBlock = styled.div`
   margin-bottom: 2rem;
   
   .prevButton {
+    margin-left: 2rem;
     margin-right: 5rem;
   }
   
   .nextButton {
     margin-left: 5rem;
+    margin-right: 2rem;
   }
 `;
 

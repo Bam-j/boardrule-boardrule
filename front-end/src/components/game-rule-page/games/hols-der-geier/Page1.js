@@ -10,14 +10,13 @@ import explanationImgSrc from '../../../../img/hols-der-geier-img/eagle-page-000
 const Page1 = () => {
   const description = '설명에 대한 테스트 문구입니다.(페이지)';
 
+  holsDerGeier.page += 1;
+  console.log(holsDerGeier.page);
+
   return (
     <>
-      <GameRuleViewer
-        imgSrc={explanationImgSrc}
-        gameTitle={holsDerGeier.gameTitle}
-        descriptionText={description}
-        page={1}
-      />
+      <GameRuleViewer imgSrc={explanationImgSrc} gameTitle={holsDerGeier.gameTitle} descriptionText={description}
+                      page={holsDerGeier.page} />
       <PageActionButtons isFirstPage />
     </>
   );
