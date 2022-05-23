@@ -15,7 +15,9 @@ const Page1 = () => {
       <GameRuleViewer
         imgSrc={explanationImgSrc}
         gameTitle={holsDerGeier.gameTitle}
-        descriptionText={description} />
+        descriptionText={description}
+        page={1}
+      />
       <PageActionButtons isFirstPage />
     </>
   );

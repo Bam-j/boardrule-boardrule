@@ -1,5 +1,6 @@
 import React from 'react';
 
-const GameRuleViewerContainer = () => {};
+const GameRuleViewerContainer = () => {
+};
 
 export default GameRuleViewerContainer;

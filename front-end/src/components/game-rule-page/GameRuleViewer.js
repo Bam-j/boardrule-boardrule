@@ -14,7 +14,6 @@ const GameRuleViewer = ({ imgSrc, gameTitle, descriptionText }) => {
       <StyledRuleViewBox>
         <StyledDescriptionImage src={imgSrc} />
         <StyledDescriptionText>{descriptionText}</StyledDescriptionText>
-        <PageActionButtons isFirstPage={false} />
       </StyledRuleViewBox>
     </>
   );
