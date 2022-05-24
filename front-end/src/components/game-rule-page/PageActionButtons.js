@@ -9,11 +9,11 @@ const PageActionButtons = ({ isFirstPage, nextPage }) => {
   return (
     <StyledPageActionButtonsBlock>
       {isFirstPage ? (
-        <Button className={'nextButton'} >다음</Button>
+        <Button className={'nextButton'} onClick={() => navigate(nextPage)} >다음</Button>
       ) : (
         <div>
           <Button className={'prevButton'} onClick={() => navigate(-1)}>이전</Button>
-          <Button className={'nextButton'}>다음</Button>
+          <Button className={'nextButton'} onClick={() => navigate(nextPage)}>다음</Button>
         </div>
       )}
     </StyledPageActionButtonsBlock>

@@ -12,11 +12,10 @@ const Page1 = () => {
   const nextPage = `/hdg/2`;
 
   return (
-    <>
-      <GameRuleViewer imgSrc={explanationImgSrc} gameTitle={holsDerGeier.gameTitle} descriptionText={description}
-                      page={holsDerGeier.page} />
-      <PageActionButtons isFirstPage />
-    </>
+    <GameRuleViewer
+      imgSrc={explanationImgSrc} descriptionText={description}
+
+    />
   );
 };
 

@@ -3,7 +3,6 @@ import styled from 'styled-components';
 import { AutoSizer, CellMeasurerCache, List, WindowScroller } from 'react-virtualized';
 import GameListItem from './GameListItem';
 
-
 /*
 *  GameList 컴포넌트는 메인 페이지의 게임 목록들을 하나로 묶어서 보여주는 컴포넌트입니다.
  */
