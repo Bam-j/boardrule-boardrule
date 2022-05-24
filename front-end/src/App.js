@@ -28,7 +28,12 @@ const App = () => {
           <Route index element={<PostListPage />} />
           <Route path={':postId'} element={<PostPage />} />
         </Route>
+        <Route path={':gameId'}>
+          <Route path={':page'} element={<RulePage />} />
+        </Route>
+        {/*
         <Route path={':gameId/:page'} element={<RulePage />} />
+        */}
       </Routes>
     </>
   );
