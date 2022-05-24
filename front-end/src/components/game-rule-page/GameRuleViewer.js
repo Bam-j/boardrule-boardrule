@@ -1,9 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const GameRuleViewer = ({ imgSrc, descriptionText, isFirstPage, nextPage }) => {
-  /* TODO 이 컴포넌트에서 각 게임에 대한 페이지를 렌더링해야함 */
-
+const GameRuleViewer = ({ imgSrc, descriptionText }) => {
   return (
     <>
       <StyledRuleViewBox>

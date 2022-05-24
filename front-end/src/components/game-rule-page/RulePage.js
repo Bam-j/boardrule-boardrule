@@ -9,6 +9,7 @@ import { useParams } from 'react-router-dom';
 const RulePage = () => {
   const { gameId } = useParams();
 
+  {/* 페이지2부터는 어떻게 할까? */}
   return (
     <>
       <Helmet>Rule - Boardrule Boardrule</Helmet>

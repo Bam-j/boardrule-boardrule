@@ -17,7 +17,6 @@ const AuthTemplate = ({ children }) => {
 
 /*
 *  styled-components 코드
-* TODO 로그인 화면에서 특정 크기 이상의 모니터의 경우 아랫 부분이 잘려나감 추후에 수정 반드시 필요!
  */
 const StyledAuthTemplate = styled.div`
   background: #e9ecef;
