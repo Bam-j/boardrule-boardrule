@@ -9,9 +9,7 @@ import explanationImgSrc from '../../../../img/hols-der-geier-img/eagle-page-000
 
 const Page1 = () => {
   const description = '설명에 대한 테스트 문구입니다.(페이지)';
-
-  holsDerGeier.page += 1;
-  console.log(holsDerGeier.page);
+  const nextPage = `/hdg/2`;
 
   return (
     <>

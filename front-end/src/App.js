@@ -9,7 +9,7 @@ import WritePage from './components/community/WritePage';
 import PostPage from './components/community/PostPage';
 import PostListPage from './components/community/PostListPage';
 import { Helmet } from 'react-helmet-async';
-import { Page1, Page2 } from './components/game-rule-page/games/hols-der-geier';
+import RulePage from './components/game-rule-page/RulePage';
 
 const App = () => {
   return (
@@ -28,7 +28,7 @@ const App = () => {
           <Route index element={<PostListPage />} />
           <Route path={':postId'} element={<PostPage />} />
         </Route>
-        <Route path={':gameId/:page'} element={<Page1 />} />
+        <Route path={':gameId/:page'} element={<RulePage />} />
       </Routes>
     </>
   );
