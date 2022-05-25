@@ -3,11 +3,15 @@ import styled from 'styled-components';
 import { FiSearch } from 'react-icons/fi';
 
 const SearchBox = () => {
+  const onSubmit = e => {
+    e.preventDefault();
+  };
+
   return (
     <form>
       <div>
         <StyledSearchBox type={'search'} placeholder='검색' />
-        <SearchIcon type='submit'><StyledFiSearch /></SearchIcon>
+        <SearchIcon type='submit' onSubmit={onSubmit}><StyledFiSearch /></SearchIcon>
       </div>
     </form>
   );
