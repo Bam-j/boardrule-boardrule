@@ -3,19 +3,17 @@ import styled from 'styled-components';
 import Button from '../common/Button';
 import { useNavigate } from 'react-router-dom';
 
-const PageActionButtons = ({ isFirstPage, nextPage }) => {
+const PageActionButtons = ({ isFirstPage, nextPageSrc, nextPageComponent }) => {
   const navigate = useNavigate();
-
-  console.log(nextPage);
 
   return (
     <StyledPageActionButtonsBlock>
       {isFirstPage ? (
-        <Button className={'nextButton'} to={nextPage} >다음</Button>
+        <Button className={'nextButton'} to={nextPageSrc} component={nextPageComponent}>다음</Button>
       ) : (
         <div>
           <Button className={'prevButton'} onClick={() => navigate(-1)}>이전</Button>
-          <Button className={'nextButton'} onClick={() => navigate(nextPage)}>다음</Button>
+          <Button className={'nextButton'} to={nextPageSrc} component={nextPageComponent}>다음</Button>
         </div>
       )}
     </StyledPageActionButtonsBlock>
