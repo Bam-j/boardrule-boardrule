@@ -5,19 +5,33 @@ import { useNavigate } from 'react-router-dom';
 
 const PageActionButtons = ({ isFirstPage, nextPageSrc, nextPageComponent }) => {
   const navigate = useNavigate();
-  const onClick = () => {
-    console.log(nextPageSrc);
-    console.log(nextPageComponent);
+  let index = 0;
+
+  const onPrevButtonClick = () => {
+    if (!isFirstPage) {
+      index -= 1;
+    }
+    navigate(-1);
+  };
+
+  const onNextButtonClick = () => {
+    index += 1;
   };
 
   return (
     <StyledPageActionButtonsBlock>
       {isFirstPage ? (
-        <Button className={'nextButton'} to={nextPageSrc} component={nextPageComponent} onClick={onClick}>다음</Button>
+        <Button className={'nextButton'} to={nextPageSrc} onClick={onNextButtonClick}>
+          다음
+        </Button>
       ) : (
         <div>
-          <Button className={'prevButton'} onClick={() => navigate(-1)}>이전</Button>
-          <Button className={'nextButton'} to={nextPageSrc} component={nextPageComponent}>다음</Button>
+          <Button className={'prevButton'} onClick={onPrevButtonClick}>
+            이전
+          </Button>
+          <Button className={'nextButton'} to={nextPageSrc} onClick={onNextButtonClick}>
+            다음
+          </Button>
         </div>
       )}
     </StyledPageActionButtonsBlock>
