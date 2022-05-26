@@ -10,7 +10,7 @@ const RulePage = () => {
   const { gameId } = useParams();
   {/*state로 페이지를 모은 배열을 만들어서 다음을 누르면 state를 바꾸도록*/}
   const hdgPages = [HdgPage1, HdgPage2];
-  const [pageOfHdg, setPageOfHdg] = useState(HdgPage1);
+  const [pageOfHdg, setPageOfHdg] = useState(hdgPages[0]);
 
   {/* 페이지2부터는 어떻게 할까? */}
   return (
