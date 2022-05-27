@@ -1,16 +1,15 @@
 import React from 'react';
 import styled from 'styled-components';
 import Button from '../common/Button';
+import { index } from './RulePage';
 import { useNavigate } from 'react-router-dom';
 
-const PageActionButtons = ({ isFirstPage, nextPageSrc, nextPageComponent }) => {
+const PageActionButtons = ({ isFirstPage, nextPageSrc }) => {
   const navigate = useNavigate();
-  let index = 0;
 
   const onPrevButtonClick = () => {
-    if (!isFirstPage) {
-      index -= 1;
-    }
+    index -= 1;
+
     navigate(-1);
   };
 
