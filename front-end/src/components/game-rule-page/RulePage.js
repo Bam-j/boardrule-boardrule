@@ -12,7 +12,7 @@ const RulePage = () => {
   const { gameId } = useParams();
 
   const hdgPages = [HdgPage1, HdgPage2];
-  const [pageOfHdg, setPageOfHdg] = useState(hdgPages[index]);
+  const [pageOfHdg, setPageOfHdg] = useState(hdgPages[0]);
 
   const klprPages = [KlprPage1];
   const [pageOfKlpr, setPageOfKlpr] = useState(klprPages[0]);
@@ -21,11 +21,15 @@ const RulePage = () => {
   const [pageOfNts, setPageOfNts] = useState(ntsPages[0]);
 
   /*
-  //useEffect 훅을 처음, index가 변할 때 마다 실행할 수 있을까
   useEffect(() => {
-    setPageOfHdg(pageOfHdg[index]);
-  }, [index]);
+    setPageOfHdg(pageOfHdg[0]);
+  }, []);
+
    */
+
+  useEffect(() => {
+    setPageOfHdg(hdgPages[index]);
+  }, [index]);
 
   {/* 페이지2부터는 어떻게 할까? */}
   return (
