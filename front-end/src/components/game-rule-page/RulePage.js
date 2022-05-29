@@ -36,7 +36,6 @@ const RulePage = () => {
     setPageOfHdg(hdgPages[index]);
   }, [index]);
 
-  {/* 페이지2부터는 어떻게 할까? */}
   return (
     <>
       <Helmet>Rule - Boardrule Boardrule</Helmet>
