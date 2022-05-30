@@ -7,7 +7,8 @@ import GameRuleViewer from '../../GameRuleViewer';
 import explanationImgSrc from '../../../../img/hols-der-geier-img/eagle-page-0001.jpg';
 
 const Page1 = () => {
-  const description = '설명에 대한 테스트 문구입니다.(페이지1)';
+  const description = '[독수리 눈치 싸움]은 상대와의 심리전을 통해 더 높은 포인트를 쟁취해야하는 게임입니다.' +
+    '게임은 ';
   const nextPageSrc = '/hdg/2';
 
   return (
