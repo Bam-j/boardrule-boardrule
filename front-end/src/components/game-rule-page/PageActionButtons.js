@@ -1,35 +1,34 @@
 import React from 'react';
 import styled from 'styled-components';
 import Button from '../common/Button';
-import { increaseIndex, decreaseIndex } from './RulePage';
+import { index } from './RulePage';
 import { useNavigate } from 'react-router-dom';
 
 const PageActionButtons = ({ isFirstPage, nextPageSrc }) => {
   const navigate = useNavigate();
 
-  const onClickPrevButton = e => {
-    e.preventDefault();
-    decreaseIndex();
+  const onPrevButtonClick = () => {
+    index -= 1;
+
     navigate(-1);
   };
 
-  const onClickNextButton = e => {
-    e.preventDefault();
-    increaseIndex();
+  const onNextButtonClick = () => {
+    index += 1;
   };
 
   return (
     <StyledPageActionButtonsBlock>
       {isFirstPage ? (
-        <Button className={'nextButton'} to={nextPageSrc} onClick={onClickNextButton}>
+        <Button className={'nextButton'} to={nextPageSrc} onClick={onNextButtonClick}>
           다음
         </Button>
       ) : (
         <div>
-          <Button className={'prevButton'} onClick={onClickPrevButton}>
+          <Button className={'prevButton'} onClick={onPrevButtonClick}>
             이전
           </Button>
-          <Button className={'nextButton'} to={nextPageSrc} onClick={onClickNextButton}>
+          <Button className={'nextButton'} to={nextPageSrc} onClick={onNextButtonClick}>
             다음
           </Button>
         </div>

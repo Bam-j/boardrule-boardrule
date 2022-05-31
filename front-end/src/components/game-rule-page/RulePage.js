@@ -8,13 +8,6 @@ import { NtsPage1 } from './games/no-thanks';
 
 export let index = 0;
 
-export const increaseIndex = () => {
-  index += 1;
-};
-export const decreaseIndex = () => {
-  index -= 1;
-};
-
 const RulePage = () => {
   const { gameId } = useParams();
 
@@ -27,10 +20,12 @@ const RulePage = () => {
   const ntsPages = [NtsPage1];
   const [pageOfNts, setPageOfNts] = useState(ntsPages[0]);
 
+  /*
   useEffect(() => {
-    index = 0;
-    setPageOfHdg(hdgPages[0]);
+    setPageOfHdg(pageOfHdg[0]);
   }, []);
+
+   */
 
   useEffect(() => {
     setPageOfHdg(hdgPages[index]);
