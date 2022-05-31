@@ -1,20 +1,19 @@
 import React from 'react';
 import styled from 'styled-components';
 import Button from '../common/Button';
-import { index } from './RulePage';
 import { useNavigate } from 'react-router-dom';
+import { decreaseIndex, increaseIndex } from './RulePage';
 
 const PageActionButtons = ({ isFirstPage, nextPageSrc }) => {
   const navigate = useNavigate();
 
   const onPrevButtonClick = () => {
-    index -= 1;
-
+    decreaseIndex();
     navigate(-1);
   };
 
   const onNextButtonClick = () => {
-    index += 1;
+    increaseIndex();
   };
 
   return (
