@@ -2,7 +2,9 @@ import React, { useEffect, useState } from 'react';
 import { Helmet } from 'react-helmet-async';
 import HeaderContainer from '../../containers/common/HeaderContainer';
 import { useParams } from 'react-router-dom';
-import { HdgPage1, HdgPage2 } from './games/hols-der-geier';
+import {
+  HdgPage1, HdgPage2, HdgPage3
+} from './games/hols-der-geier';
 import { KlprPage1 } from './games/kaker-laken-poker-royal';
 import { NtsPage1 } from './games/no-thanks';
 
@@ -10,15 +12,17 @@ export let index = 0;
 
 export const increaseIndex = () => {
   index += 1;
+  console.log('인덱스 증가', index);
 };
 export const decreaseIndex = () => {
   index -= 1;
+  console.log('인덱스 감소', index);
 };
 
 const RulePage = () => {
   const { gameId } = useParams();
 
-  const hdgPages = [HdgPage1, HdgPage2];
+  const hdgPages = [HdgPage1, HdgPage2, HdgPage3];
   const [pageOfHdg, setPageOfHdg] = useState(hdgPages[0]);
 
   const klprPages = [KlprPage1];
@@ -31,7 +35,6 @@ const RulePage = () => {
     index = 0;
     setPageOfHdg(hdgPages[0]);
   }, []);
-
 
   useEffect(() => {
     setPageOfHdg(hdgPages[index]);
