@@ -46,5 +46,4 @@ const RulePage = () => {
     </>
   );
 };
-
 export default RulePage;
