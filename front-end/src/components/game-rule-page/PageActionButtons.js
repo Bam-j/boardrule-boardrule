@@ -9,7 +9,6 @@ const PageActionButtons = ({ isFirstPage, nextPageSrc }) => {
 
   const onPrevButtonClick = () => {
     decreaseIndex();
-    navigate(-1);
   };
 
   const onNextButtonClick = () => {
@@ -24,7 +23,7 @@ const PageActionButtons = ({ isFirstPage, nextPageSrc }) => {
         </Button>
       ) : (
         <div>
-          <Button className={'prevButton'} onClick={onPrevButtonClick}>
+          <Button className={'prevButton'} to={() => navigate(-1)} onClick={onPrevButtonClick}>
             이전
           </Button>
           <Button className={'nextButton'} to={nextPageSrc} onClick={onNextButtonClick}>

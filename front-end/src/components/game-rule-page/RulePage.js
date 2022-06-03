@@ -3,7 +3,8 @@ import { Helmet } from 'react-helmet-async';
 import HeaderContainer from '../../containers/common/HeaderContainer';
 import { useParams } from 'react-router-dom';
 import {
-  HdgPage1, HdgPage2, HdgPage3
+  HdgPage1, HdgPage2, HdgPage3, HdgPage4, HdgPage5,
+  HdgPage6, HdgPage7, HdgPage8, HdgPage9, HdgPage10
 } from './games/hols-der-geier';
 import { KlprPage1 } from './games/kaker-laken-poker-royal';
 import { NtsPage1 } from './games/no-thanks';
@@ -22,7 +23,10 @@ export const decreaseIndex = () => {
 const RulePage = () => {
   const { gameId } = useParams();
 
-  const hdgPages = [HdgPage1, HdgPage2, HdgPage3];
+  const hdgPages = [
+    HdgPage1, HdgPage2, HdgPage3, HdgPage4, HdgPage5,
+    HdgPage6, HdgPage7, HdgPage8, HdgPage9, HdgPage10,
+  ];
   const [pageOfHdg, setPageOfHdg] = useState(hdgPages[0]);
 
   const klprPages = [KlprPage1];
