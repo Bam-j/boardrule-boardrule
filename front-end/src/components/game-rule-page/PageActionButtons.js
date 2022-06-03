@@ -13,29 +13,32 @@ const PageActionButtons = ({ isFirstPage, isLastPage, nextPageSrc }) => {
 
   const onNextButtonClick = () => {
     increaseIndex();
+    console.log(nextPageSrc);
   };
 
   return (
     <StyledPageActionButtonsBlock>
-      {isFirstPage ? (
-          <Button className={'nextButton'} to={nextPageSrc} onClick={onNextButtonClick}>
-            다음
-          </Button>
-        ) :
-        isLastPage ? (
-          <Button className={'prevButton'} to={() => navigate(-1)} onClick={onPrevButtonClick}>
-            이전
-          </Button>
-        ) : (
-          <div className={'ActionButtonsBox'}>
-            <Button className={'prevButton'} to={() => navigate(-1)} onClick={onPrevButtonClick}>
-              이전
-            </Button>
+      {
+        isFirstPage ? (
             <Button className={'nextButton'} to={nextPageSrc} onClick={onNextButtonClick}>
               다음
             </Button>
-          </div>
-        )
+          ) :
+          /*TODO 이전 페이지로 가는 동작이 제대로 작동하지 않음 - 원인은 뭘까?*/
+          isLastPage ? (
+            <Button className={'prevButton'} to={() => navigate(-1)} onClick={onPrevButtonClick}>
+              이전
+            </Button>
+          ) : (
+            <div className={'ActionButtonsBox'}>
+              <Button className={'prevButton'} to={() => navigate(-1)} onClick={onPrevButtonClick}>
+                이전
+              </Button>
+              <Button className={'nextButton'} to={nextPageSrc} onClick={onNextButtonClick}>
+                다음
+              </Button>
+            </div>
+          )
       }
     </StyledPageActionButtonsBlock>
   );
