@@ -10,7 +10,7 @@ const Page10 = () => {
   return (
     <>
       <GameRuleViewer imgSrc={explanationImgSrc} descriptionText={description} />
-      <PageActionButtons isFirstPage={false} nextPage={nextPageSrc} />
+      <PageActionButtons isFirstPage={false} nextPageSrc={nextPageSrc} />
     </>
   );
 };
