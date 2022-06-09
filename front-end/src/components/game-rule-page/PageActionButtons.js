@@ -24,7 +24,6 @@ const PageActionButtons = ({ isFirstPage, isLastPage, nextPageSrc }) => {
               다음
             </Button>
           ) :
-          /*TODO 이전 페이지로 가는 동작이 제대로 작동하지 않음 - 원인은 뭘까?*/
           isLastPage ? (
             <Button className={'prevButton'} to={() => navigate(-1)} onClick={onPrevButtonClick}>
               이전

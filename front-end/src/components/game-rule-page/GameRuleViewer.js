@@ -36,8 +36,6 @@ const StyledDescriptionText = styled.p`
   justify-content: center;
   align-content: center;
   padding-left: 1rem;
-  
-  border: 1px solid blue;
 `;
 
 export default GameRuleViewer;
