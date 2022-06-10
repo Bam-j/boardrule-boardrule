@@ -20,7 +20,7 @@ const MainPage = () => {
         <title>Boardrule Boardrule</title>
       </Helmet>
       <HeaderContainer type={'home'} />
-      <SearchBox />
+      {/*<SearchBox />*/}
       <GameList games={games} />
     </>
   );
