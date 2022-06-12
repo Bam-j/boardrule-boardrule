@@ -4,7 +4,7 @@ import GameRuleViewer from '../../GameRuleViewer';
 import explanationImgSrc from '../../../../img/hols-der-geier-img/eagle-page-0008.jpg';
 
 const Page9 = () => {
-  const description = '숫자 1~15의 빨강, 노랑, 초록, 파랑, 보라 카드와 -1~-5, 1~15의 점수 카드 20장으로 구성되어 있습니다.';
+  const description = '지금처럼 합한 점수가 +라면 더 높은 숫자를 낸 노란색 플레이어가 점수 카드를 가져가게 됩니다.';
   const nextPageSrc = '/hdg/9';
 
   return (

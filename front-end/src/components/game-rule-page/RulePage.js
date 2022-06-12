@@ -13,11 +13,9 @@ export let index = 0;
 
 export const increaseIndex = () => {
   index += 1;
-  console.log('인덱스 증가', index);
 };
 export const decreaseIndex = () => {
   index -= 1;
-  console.log('인덱스 감소', index);
 };
 
 const RulePage = () => {

@@ -13,7 +13,6 @@ const PageActionButtons = ({ isFirstPage, isLastPage, nextPageSrc }) => {
 
   const onNextButtonClick = () => {
     increaseIndex();
-    console.log(nextPageSrc);
   };
 
   return (
