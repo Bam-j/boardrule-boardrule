@@ -43,7 +43,6 @@ const PostList = ({ posts, loading, error, showWriteButton }) => {
 }
 const PostListBlock = styled(Responsive)`
   margin-top: 0;
-  border: 1px solid green;
 `;
 
 const WritePostButtonWrapper = styled.div`
