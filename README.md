@@ -1,11 +1,10 @@
 # 보들보들
 ## Boardrule Boardule(보들보들)
 
----
 `보들보들`은 보드게임의 복잡한 룰들을 간편하게 볼 수 있는 웹 페이지입니다.<br>
-개인부터 보드게임 카페와 같은 업장까지 그동안 룰 설명 하시느라 힘드셨죠? 이제는 더 이상 설명하느라 인력과 시간을 낭비하지 마세요!
-[링크](http://boardrule-boardrule.s3-website.ap-northeast-2.amazonaws.com/)
----
+개인부터 보드게임 카페와 같은 업장까지 그동안 룰 설명 하시느라 힘드셨죠? 이제는 더 이상 설명하느라 인력과 시간을 낭비하지 마세요!<br>
+<del>[링크](http://boardrule-boardrule.s3-website.ap-northeast-2.amazonaws.com/)</del>
+
 ## \'Boardrule Boardule\'은 왜 시작되었을까요?
 `Boardrule-Boardrule` 프로젝트는 개인과 업체를 위한 보드게임 룰 설명 페이지입니다.
 
@@ -22,10 +21,20 @@
 따라서 룰 설명의 시간을 최소화하고, 잘못된 플레이로 인해서 발생하는 `불쾌한 경험`들을 최소화 하고자 `Boardrule-Boardrule` 프로젝트를 시작하게
 되었습니다.
 
----
 ## Boardrule Boardule 이용법
 `Boardrule Boardule`에서는 다양한 보드게임의 룰들을 찾아서 보실 수 있습니다. 또한 커뮤니티를 지원하여 보드게임의 룰 추가나 '하우스 룰', '특수 룰'
 들도 추가하는 등 다양한 방식으로 사용자로부터 룰 정립받고, 보드게임 플레이어도 구하는 등 종합 커뮤니티의 성격을 띄고 있습니다.
 
----
+<hr>
+
 ## 사용 기술
+### 프론트엔드
+> `JavaScript`, `React.js`, `styled-components`, `react-router-dom`,
+> `react-redux`, `redux-saga`
+
+### 백엔드
+> `Node.js`, `koa`, `koa-router`, `MongoDB`, `mongoose`
+
+<hr>
+
+## 후기
