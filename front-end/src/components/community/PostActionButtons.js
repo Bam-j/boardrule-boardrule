@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import AskModal from '../common/AskModal';
+import AskModalForRemove from './AskModalForRemove';
 
 const PostActionButtons = ({ onEdit, onRemove }) => {
   const [modal, setModal] = useState(false);
@@ -22,7 +22,7 @@ const PostActionButtons = ({ onEdit, onRemove }) => {
         <StyledPostActionButton onClick={onEdit}>수정</StyledPostActionButton>
         <StyledPostActionButton onClick={onRemoveClick}>삭제</StyledPostActionButton>
       </StyledActionButtonsBlock>
-      <AskModal visible={modal} onConfirm={onConfirm} onCancel={onCancel} />
+      <AskModalForRemove visible={modal} onConfirm={onConfirm} onCancel={onCancel} />
     </>
   );
 };

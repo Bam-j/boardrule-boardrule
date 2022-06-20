@@ -38,6 +38,7 @@ const BackScreen = styled.div`
 
 const StyledAskModalBlock = styled.div`
   width: 320px;
+  height: auto;
   background: white;
   padding: 1.5rem;
   border-radius: 4px;
