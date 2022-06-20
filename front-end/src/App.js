@@ -31,9 +31,6 @@ const App = () => {
         <Route path={':gameId'}>
           <Route path={':page'} element={<RulePage />} />
         </Route>
-        {/*
-        <Route path={':gameId/:page'} element={<RulePage />} />
-        */}
       </Routes>
     </>
   );
