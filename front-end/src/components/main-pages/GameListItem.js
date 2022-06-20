@@ -13,7 +13,7 @@ const GameListItem = ({ game }) => {
       <StyledGameListItemLink to={`/${gameId}/0`}>
         <StyledGameListItem>
           <GameImage><img src={gameImgSrc} className={'GameListItem-game-image'} alt={'Game'} /></GameImage>
-          <br/><br/>
+          <br/><br/><br/>
           <h3 id={'game-title'}>{gameTitle}</h3>
           <p id={'game-description'}>{gameDescription}</p>
         </StyledGameListItem>
@@ -36,8 +36,8 @@ const StyledGameListItemLink = styled(Link)`
 const StyledGameListItem = styled.div`
   display: inline-block;
   width: 25%;
-  height: 30%;
-  font-family: Fredoka;
+  height: 40%;
+  font-family: "PT Sans";
   cursor: pointer;
   margin-left: 1rem;
   margin-right: 1rem;
