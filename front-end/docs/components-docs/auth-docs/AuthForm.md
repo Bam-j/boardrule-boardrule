@@ -107,6 +107,7 @@ const AuthForm = ({ type, form, onChange, onSubmit, error }) => {
 <h3>{text}</h3>
 ```
 이 부분에서는 현재 Form이 어떤 상태인지를 사용자에게 알려줍니다. 전달된 type에 따라 결정된 text의 결과를 반환합니다.
+
 ![image](https://user-images.githubusercontent.com/64255763/174594445-a22ca638-b19d-43fd-93de-0089afb86a99.png)![image](https://user-images.githubusercontent.com/64255763/174594511-2bacac17-256d-4e7c-90a8-c8968751eb54.png)
 
 <br>
